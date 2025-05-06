@@ -1,0 +1,221 @@
+A conda environment has been detected CONDA_PREFIX=
+/sw/external/python/anaconda3_cpu 
+anaconda3_cpu is loaded. Consider running conda deactivate and reloading it.
+cur args is:  Namespace(align=0.0, batch_size=16, beta_1=0.9, crop=224, cxr_data_dir='physionet.org/files/mimic-cxr-jpg/2.0.0', daft_activation='linear', data_pairs='partial_ehr_cxr', data_ratio=1.0, depth=1, dim=256, dropout=0.3, ehr_data_dir='mimic4extract/data', epochs=50, eval=False, fusion='joint', fusion_type='lstm', imputation='previous', labels_set='pheno', layer_after=4, layers=2, load_state=None, load_state_cxr=None, load_state_ehr='./checkpoints/phenotyping/uni_ehr_full/best_checkpoint.pth.tar', lr=7e-05, missing_token=None, mmtm_ratio=4, mode='train', network=None, normalizer_state=None, num_classes=25, patience=15, pretrained=False, rec_dropout=0.0, resize=256, resume=False, save_dir='checkpoints/phenotyping/medFuse', task='phenotyping', timestep=1.0, vision_backbone='resnet34', vision_num_classes=25)
+  layer_after                             : 4
+  layers                                  : 2
+  vision_num_classes                      : 25
+  resize                                  : 256
+  crop                                    : 224
+  vision_backbone                         : resnet34
+  pretrained                              : False
+  eval                                    : False
+  network                                 : None
+  fusion_type                             : lstm
+  task                                    : phenotyping
+  labels_set                              : pheno
+  data_ratio                              : 1.0
+  mmtm_ratio                              : 4
+  daft_activation                         : linear
+  fusion                                  : joint
+  dim                                     : 256
+  depth                                   : 1
+  epochs                                  : 50
+  load_state                              : None
+  load_state_cxr                          : None
+  load_state_ehr                          : ./checkpoints/phenotyping/uni_ehr_full/best_checkpoint.pth.tar
+  mode                                    : train
+  batch_size                              : 16
+  resume                                  : False
+  dropout                                 : 0.3
+  num_classes                             : 25
+  patience                                : 15
+  rec_dropout                             : 0.0
+  timestep                                : 1.0
+  imputation                              : previous
+  lr                                      : 7e-05
+  align                                   : 0.0
+  data_pairs                              : partial_ehr_cxr
+  missing_token                           : None
+  beta_1                                  : 0.9
+  normalizer_state                        : None
+  ehr_data_dir                            : mimic4extract/data
+  cxr_data_dir                            : physionet.org/files/mimic-cxr-jpg/2.0.0
+  save_dir                                : checkpoints/phenotyping/medFuse
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/nn/modules/rnn.py:65: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='mean' instead.
+  warnings.warn(warning.format(ret))
+loaded ehr checkpoint from ./checkpoints/phenotyping/uni_ehr_full/best_checkpoint.pth.tar
+LSTM(
+  (layer0): LSTM(76, 256, batch_first=True, dropout=0.3)
+  (layer1): LSTM(256, 256, batch_first=True, dropout=0.3)
+  (do): Dropout(p=0.3, inplace=False)
+  (dense_layer): Linear(in_features=256, out_features=25, bias=True)
+)
+Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.9)
+    eps: 1e-08
+    lr: 7e-05
+    weight_decay: 0
+)
+BCELoss()
+==> training
+running for fusion_type lstm
+starting val epoch 1
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/nn/functional.py:718: UserWarning: Named tensors and all their associated APIs are an experimental feature and subject to change. Please do not use them for anything important until they are released as stable. (Triggered internally at  /opt/conda/conda-bld/pytorch_1623448272031/work/c10/core/TensorImpl.h:1156.)
+  return torch.max_pool2d(input, kernel_size, stride, padding, dilation, ceil_mode)
+val [0001 / 0050] validation loss: 	0.68871 	0.00000
+saving last checkpoint at epoch 1
+saving best checkpoint at epoch 1
+Acute and unspecified renal failure                                                        & 0.466(0.507, 0.427) & 0.317 (0.364, 0.275) 
+Acute cerebrovascular disease                                                              & 0.454(0.525, 0.384) & 0.063 (0.106, 0.046) 
+Acute myocardial infarction                                                                & 0.450(0.518, 0.384) & 0.078 (0.107, 0.060) 
+Cardiac dysrhythmias                                                                       & 0.553(0.595, 0.514) & 0.388 (0.445, 0.343) 
+Chronic kidney disease                                                                     & 0.492(0.540, 0.444) & 0.246 (0.300, 0.209) 
+Chronic obstructive pulmonary disease and bronchiectasis                                   & 0.529(0.578, 0.474) & 0.213 (0.269, 0.177) 
+Complications of surgical procedures or medical care                                       & 0.492(0.538, 0.444) & 0.218 (0.261, 0.185) 
+Conduction disorders                                                                       & 0.514(0.568, 0.461) & 0.117 (0.152, 0.096) 
+Congestive heart failure; nonhypertensive                                                  & 0.519(0.559, 0.477) & 0.341 (0.392, 0.296) 
+Coronary atherosclerosis and other heart disease                                           & 0.553(0.595, 0.511) & 0.382 (0.438, 0.333) 
+Diabetes mellitus with complications                                                       & 0.325(0.377, 0.275) & 0.097 (0.127, 0.076) 
+Diabetes mellitus without complication                                                     & 0.532(0.583, 0.484) & 0.233 (0.287, 0.196) 
+Disorders of lipid metabolism                                                              & 0.492(0.531, 0.458) & 0.457 (0.509, 0.415) 
+Essential hypertension                                                                     & 0.519(0.554, 0.482) & 0.450 (0.499, 0.406) 
+Fluid and electrolyte disorders                                                            & 0.430(0.467, 0.390) & 0.377 (0.417, 0.340) 
+Gastrointestinal hemorrhage                                                                & 0.476(0.552, 0.400) & 0.059 (0.082, 0.045) 
+Hypertension with complications and secondary hypertension                                 & 0.528(0.578, 0.486) & 0.226 (0.273, 0.192) 
+Other liver diseases                                                                       & 0.498(0.553, 0.440) & 0.141 (0.182, 0.112) 
+Other lower respiratory disease                                                            & 0.535(0.592, 0.476) & 0.169 (0.227, 0.125) 
+Other upper respiratory disease                                                            & 0.540(0.606, 0.470) & 0.112 (0.175, 0.081) 
+Pleurisy; pneumothorax; pulmonary collapse                                                 & 0.496(0.563, 0.432) & 0.116 (0.155, 0.091) 
+Pneumonia (except that caused by tuberculosis or sexually transmitted disease)             & 0.474(0.522, 0.425) & 0.202 (0.253, 0.166) 
+Respiratory failure; insufficiency; arrest (adult)                                         & 0.488(0.531, 0.448) & 0.306 (0.354, 0.269) 
+Septicemia (except in labor)                                                               & 0.534(0.578, 0.488) & 0.240 (0.297, 0.204) 
+Shock                                                                                      & 0.542(0.587, 0.496) & 0.219 (0.270, 0.182) 
+
+
+
+val  1   best mean auc :0.497 mean auprc 0.231 
+
+
+                    CI AUROC (0.447, 0.548) CI AUPRC (0.197, 0.278) 
+
+
+                     AUROC accute 0.491 mixed 0.482 chronic 0.521
+
+
+                     AUROC accute CI (0.436, 0.545) mixed (0.434 , 0.531) chronic (0.477, 0.566)
+
+
+                     AUPRC accute  0.190 mixed 0.217 chronic 0.315 
+
+
+                     AUPRC accute CI  (0.159, 0.236) mixed (0.185,  0.260) chronic (0.275, 0.368) 
+
+
+                    
+starting train epoch 1
+ epoch [0001 / 0050] [0009/2664] eta: 13 Days 3:39:55       lr: 	7.0000E-05 loss: 	0.75737 loss align 0.0000
+ epoch [0001 / 0050] [0109/2664] eta: 2 Days 12:56:39       lr: 	7.0000E-05 loss: 	0.65322 loss align 0.0000
+ epoch [0001 / 0050] [0209/2664] eta: 2 Days 1:19:57        lr: 	7.0000E-05 loss: 	0.59767 loss align 0.0000
+ epoch [0001 / 0050] [0309/2664] eta: 1 Days 21:2:17        lr: 	7.0000E-05 loss: 	0.54715 loss align 0.0000
+ epoch [0001 / 0050] [0409/2664] eta: 1 Days 19:19:52       lr: 	7.0000E-05 loss: 	0.51950 loss align 0.0000
+ epoch [0001 / 0050] [0509/2664] eta: 1 Days 18:31:10       lr: 	7.0000E-05 loss: 	0.50241 loss align 0.0000
+ epoch [0001 / 0050] [0609/2664] eta: 1 Days 17:33:20       lr: 	7.0000E-05 loss: 	0.48969 loss align 0.0000
+ epoch [0001 / 0050] [0709/2664] eta: 1 Days 16:50:42       lr: 	7.0000E-05 loss: 	0.48005 loss align 0.0000
+ epoch [0001 / 0050] [0809/2664] eta: 1 Days 16:40:0        lr: 	7.0000E-05 loss: 	0.47321 loss align 0.0000
+ epoch [0001 / 0050] [0909/2664] eta: 1 Days 16:35:0        lr: 	7.0000E-05 loss: 	0.46696 loss align 0.0000
+ epoch [0001 / 0050] [1009/2664] eta: 1 Days 16:10:0        lr: 	7.0000E-05 loss: 	0.46256 loss align 0.0000
+ epoch [0001 / 0050] [1109/2664] eta: 1 Days 16:2:50        lr: 	7.0000E-05 loss: 	0.45879 loss align 0.0000
+ epoch [0001 / 0050] [1209/2664] eta: 1 Days 15:51:26       lr: 	7.0000E-05 loss: 	0.45494 loss align 0.0000
+ epoch [0001 / 0050] [1309/2664] eta: 1 Days 15:39:10       lr: 	7.0000E-05 loss: 	0.45151 loss align 0.0000
+ epoch [0001 / 0050] [1409/2664] eta: 1 Days 15:31:41       lr: 	7.0000E-05 loss: 	0.44895 loss align 0.0000
+ epoch [0001 / 0050] [1509/2664] eta: 1 Days 15:33:44       lr: 	7.0000E-05 loss: 	0.44617 loss align 0.0000
+ epoch [0001 / 0050] [1609/2664] eta: 1 Days 15:27:8        lr: 	7.0000E-05 loss: 	0.44368 loss align 0.0000
+ epoch [0001 / 0050] [1709/2664] eta: 1 Days 15:26:42       lr: 	7.0000E-05 loss: 	0.44173 loss align 0.0000
+ epoch [0001 / 0050] [1809/2664] eta: 1 Days 15:26:37       lr: 	7.0000E-05 loss: 	0.43951 loss align 0.0000
+ epoch [0001 / 0050] [1909/2664] eta: 1 Days 15:16:44       lr: 	7.0000E-05 loss: 	0.43720 loss align 0.0000
+ epoch [0001 / 0050] [2009/2664] eta: 1 Days 15:12:44       lr: 	7.0000E-05 loss: 	0.43549 loss align 0.0000
+ epoch [0001 / 0050] [2109/2664] eta: 1 Days 15:13:33       lr: 	7.0000E-05 loss: 	0.43360 loss align 0.0000
+ epoch [0001 / 0050] [2209/2664] eta: 1 Days 15:15:10       lr: 	7.0000E-05 loss: 	0.43188 loss align 0.0000
+ epoch [0001 / 0050] [2309/2664] eta: 1 Days 15:13:18       lr: 	7.0000E-05 loss: 	0.43013 loss align 0.0000
+ epoch [0001 / 0050] [2409/2664] eta: 1 Days 15:14:12       lr: 	7.0000E-05 loss: 	0.42872 loss align 0.0000
+ epoch [0001 / 0050] [2509/2664] eta: 1 Days 15:15:34       lr: 	7.0000E-05 loss: 	0.42740 loss align 0.0000
+ epoch [0001 / 0050] [2609/2664] eta: 1 Days 15:10:42       lr: 	7.0000E-05 loss: 	0.42612 loss align 0.0000
+starting val epoch 2
+val [0002 / 0050] validation loss: 	0.44677 	0.00000
+saving last checkpoint at epoch 2
+saving best checkpoint at epoch 2
+Acute and unspecified renal failure                                                        & 0.766(0.800, 0.730) & 0.634 (0.693, 0.581) 
+Acute cerebrovascular disease                                                              & 0.773(0.837, 0.703) & 0.217 (0.331, 0.155) 
+Acute myocardial infarction                                                                & 0.723(0.774, 0.672) & 0.200 (0.287, 0.139) 
+Cardiac dysrhythmias                                                                       & 0.608(0.647, 0.570) & 0.432 (0.490, 0.381) 
+Chronic kidney disease                                                                     & 0.706(0.748, 0.668) & 0.379 (0.453, 0.325) 
+Chronic obstructive pulmonary disease and bronchiectasis                                   & 0.657(0.698, 0.614) & 0.300 (0.366, 0.242) 
+Complications of surgical procedures or medical care                                       & 0.577(0.622, 0.529) & 0.287 (0.352, 0.237) 
+Conduction disorders                                                                       & 0.647(0.692, 0.594) & 0.184 (0.244, 0.142) 
+Congestive heart failure; nonhypertensive                                                  & 0.686(0.720, 0.650) & 0.475 (0.539, 0.425) 
+Coronary atherosclerosis and other heart disease                                           & 0.699(0.735, 0.661) & 0.517 (0.583, 0.459) 
+Diabetes mellitus with complications                                                       & 0.857(0.890, 0.826) & 0.437 (0.537, 0.355) 
+Diabetes mellitus without complication                                                     & 0.709(0.747, 0.672) & 0.327 (0.396, 0.278) 
+Disorders of lipid metabolism                                                              & 0.677(0.707, 0.640) & 0.636 (0.684, 0.585) 
+Essential hypertension                                                                     & 0.591(0.628, 0.552) & 0.537 (0.591, 0.490) 
+Fluid and electrolyte disorders                                                            & 0.732(0.767, 0.699) & 0.668 (0.720, 0.612) 
+Gastrointestinal hemorrhage                                                                & 0.636(0.703, 0.572) & 0.093 (0.148, 0.067) 
+Hypertension with complications and secondary hypertension                                 & 0.697(0.738, 0.656) & 0.342 (0.411, 0.291) 
+Other liver diseases                                                                       & 0.691(0.740, 0.639) & 0.251 (0.324, 0.203) 
+Other lower respiratory disease                                                            & 0.618(0.671, 0.568) & 0.181 (0.237, 0.142) 
+Other upper respiratory disease                                                            & 0.709(0.772, 0.644) & 0.224 (0.326, 0.161) 
+Pleurisy; pneumothorax; pulmonary collapse                                                 & 0.610(0.667, 0.552) & 0.162 (0.226, 0.120) 
+Pneumonia (except that caused by tuberculosis or sexually transmitted disease)             & 0.739(0.777, 0.697) & 0.409 (0.486, 0.341) 
+Respiratory failure; insufficiency; arrest (adult)                                         & 0.833(0.861, 0.805) & 0.668 (0.726, 0.609) 
+Septicemia (except in labor)                                                               & 0.842(0.870, 0.810) & 0.573 (0.647, 0.503) 
+Shock                                                                                      & 0.863(0.888, 0.834) & 0.614 (0.685, 0.540) 
+
+
+
+val  2   best mean auc :0.706 mean auprc 0.390 
+
+
+                    CI AUROC (0.662, 0.748) CI AUPRC (0.335, 0.459) 
+
+
+                     AUROC accute 0.725 mixed 0.698 chronic 0.677
+
+
+                     AUROC accute CI (0.678, 0.770) mixed (0.656 , 0.738) chronic (0.638, 0.714)
+
+
+                     AUPRC accute  0.379 mixed 0.356 chronic 0.434 
+
+
+                     AUPRC accute CI  (0.324, 0.451) mixed (0.301,  0.427) chronic (0.381, 0.498) 
+
+
+                    
+starting train epoch 2
+ epoch [0002 / 0050] [0009/2664] eta: 1 Days 23:18:45       lr: 	7.0000E-05 loss: 	0.43968 loss align 0.0000
+ epoch [0002 / 0050] [0109/2664] eta: 1 Days 22:51:50       lr: 	7.0000E-05 loss: 	0.39790 loss align 0.0000
+ epoch [0002 / 0050] [0209/2664] eta: 1 Days 22:23:13       lr: 	7.0000E-05 loss: 	0.39420 loss align 0.0000
+ epoch [0002 / 0050] [0309/2664] eta: 1 Days 21:58:21       lr: 	7.0000E-05 loss: 	0.39324 loss align 0.0000
+ epoch [0002 / 0050] [0409/2664] eta: 1 Days 21:32:42       lr: 	7.0000E-05 loss: 	0.39323 loss align 0.0000
+ epoch [0002 / 0050] [0509/2664] eta: 1 Days 21:11:58       lr: 	7.0000E-05 loss: 	0.39306 loss align 0.0000
+Traceback (most recent call last):
+  File "fusion_main.py", line 97, in <module>
+    trainer.train()
+  File "/taiga/illinois/aces/nres/kaiyug/langzhou/MedFuse/trainers/fusion_trainer.py", line 301, in train
+    self.train_epoch()
+  File "/taiga/illinois/aces/nres/kaiyug/langzhou/MedFuse/trainers/fusion_trainer.py", line 114, in train_epoch
+    loss.backward()
+  File "/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/_tensor.py", line 255, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph, inputs=inputs)
+  File "/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/autograd/__init__.py", line 149, in backward
+    allow_unreachable=True, accumulate_grad=True)  # allow_unreachable flag
+  File "/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 4119710) is killed by signal: Killed. 
+slurmstepd: error: Detected 1 oom_kill event in StepId=9461349.0. Some of the step tasks have been OOM Killed.
+srun: error: cn097: task 0: Out Of Memory

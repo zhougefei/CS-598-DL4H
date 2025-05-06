@@ -1,0 +1,41 @@
+1. environment settings:  
+    torchvision=0.2.2  -> torchvision=0.2.1
+    - warmup-scheduler==0.3.2  -> - warmup-scheduler==0.3
+
+
+9432285   job_4
+9439451   job_5
+9440095   job_6
+9441311   job_7
+9441453   job_8
+9442510   job_9
+9443058   job_10
+9443751   job_11
+9443813   job_12   create_split.py
+9448946   job_13   sh ./scripts/radiology/uni_cxr.sh
+9461398   job_13   sh ./scripts/radiology/uni_cxr.sh # again
+9449357   job_14   sh ./scripts/phenotyping/train/uni_all.sh
+9449388   job_15   sh ./scripts/mortality/train/uni_all.s
+9460194   job_16   sh ./scripts/mortality/train/medFuse.sh
+9494307   job_17   sh ./scripts/phenotyping/train/medFuse.sh  # failed due to memory is not enough
+9500717   job_17   sh ./scripts/phenotyping/train/medFuse.sh
+9578142   job_18   sh ./scripts/mortality/eval/medFuse.sh
+9585360   job_19   sh ./scripts/phenotyping/eval/medFuse.sh
+
+9603043   job_24   sh ./scripts/phenotyping/eval/medFuse_rand.sh
+9603044   job_25   sh ./scripts/mortality/eval/medFuse_rand.sh
+
+
+baseline:
+9578610   job_20  srun sh ./scripts/phenotyping/train/early.sh
+9578614   job_21  srun sh ./scripts/mortality/train/early.sh
+9578616   job_22  srun sh ./scripts/phenotyping/train/joint.sh
+9578618   job_23  srun sh ./scripts/mortality/train/joint.sh
+
+9603096   job_26  srun sh ./scripts/phenotyping/eval/early.sh
+9603097   job_27  srun sh ./scripts/mortality/eval/early.sh
+9628629   job_28  srun sh ./scripts/phenotyping/eval/joint.sh
+9603098   job_29  srun sh ./scripts/mortality/eval/joint.sh
+
+
+

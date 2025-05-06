@@ -1,0 +1,11 @@
+A conda environment has been detected CONDA_PREFIX=
+/u/langzhou/.conda/envs/medfuse 
+anaconda3_cpu is loaded. Consider running conda deactivate and reloading it.
+Namespace(align=0.0, batch_size=16, beta_1=0.9, crop=224, cxr_data_dir='data/physionet.org/files/mimic-cxr-jpg/2.0.0', daft_activation='linear', data_pairs='radiology', data_ratio=1.0, depth=1, dim=256, dropout=0.3, ehr_data_dir='data/mimic-iv-extracted', epochs=100, eval=False, fusion='joint', fusion_type='uni_cxr', imputation='previous', labels_set='radiology', layer_after=4, layers=2, load_state=None, load_state_cxr=None, load_state_ehr=None, lr=0.0001, missing_token=None, mmtm_ratio=4, mode='eval', network=None, normalizer_state=None, num_classes=25, patience=15, pretrained=True, rec_dropout=0.0, resize=256, resume=False, save_dir='checkpoints/cxr_rad_full', task='phenotyping', timestep=1.0, vision_backbone='resnet34', vision_num_classes=14)
+Traceback (most recent call last):
+  File "fusion_main.py", line 55, in <module>
+    discretizer_header = discretizer.transform(read_timeseries(args))[1].split(',')
+  File "fusion_main.py", line 40, in read_timeseries
+    with open(path, "r") as tsfile:
+FileNotFoundError: [Errno 2] No such file or directory: 'data/mimic-iv-extracted/phenotyping/train/14991576_episode3_timeseries.csv'
+srun: error: cn109: task 0: Exited with exit code 1

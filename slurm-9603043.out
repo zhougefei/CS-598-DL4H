@@ -1,0 +1,91 @@
+A conda environment has been detected CONDA_PREFIX=
+/sw/external/python/anaconda3_cpu 
+anaconda3_cpu is loaded. Consider running conda deactivate and reloading it.
+cur args is:  Namespace(align=0.0, batch_size=16, beta_1=0.9, crop=224, cxr_data_dir='physionet.org/files/mimic-cxr-jpg/2.0.0', daft_activation='linear', data_pairs='partial_ehr_cxr', data_ratio=1.0, depth=1, dim=256, dropout=0.3, ehr_data_dir='mimic4extract/data', epochs=50, eval=False, fusion='joint', fusion_type='lstm', imputation='previous', labels_set='mortality', layer_after=4, layers=2, load_state=None, load_state_cxr=None, load_state_ehr=None, lr=0.0001, missing_token=None, mmtm_ratio=4, mode='eval', network=None, normalizer_state=None, num_classes=1, patience=15, pretrained=False, rec_dropout=0.0, resize=256, resume=False, save_dir='checkpoints/mortality/medFuse', task='in-hospital-mortality', timestep=1.0, vision_backbone='resnet34', vision_num_classes=14)
+  layer_after                             : 4
+  layers                                  : 2
+  vision_num_classes                      : 14
+  resize                                  : 256
+  crop                                    : 224
+  vision_backbone                         : resnet34
+  pretrained                              : False
+  eval                                    : False
+  network                                 : None
+  fusion_type                             : lstm
+  task                                    : in-hospital-mortality
+  labels_set                              : mortality
+  data_ratio                              : 1.0
+  mmtm_ratio                              : 4
+  daft_activation                         : linear
+  fusion                                  : joint
+  dim                                     : 256
+  depth                                   : 1
+  epochs                                  : 50
+  load_state                              : None
+  load_state_cxr                          : None
+  load_state_ehr                          : None
+  mode                                    : eval
+  batch_size                              : 16
+  resume                                  : False
+  dropout                                 : 0.3
+  num_classes                             : 1
+  patience                                : 15
+  rec_dropout                             : 0.0
+  timestep                                : 1.0
+  imputation                              : previous
+  lr                                      : 0.0001
+  align                                   : 0.0
+  data_pairs                              : partial_ehr_cxr
+  missing_token                           : None
+  beta_1                                  : 0.9
+  normalizer_state                        : None
+  ehr_data_dir                            : mimic4extract/data
+  cxr_data_dir                            : physionet.org/files/mimic-cxr-jpg/2.0.0
+  save_dir                                : checkpoints/mortality/medFuse
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/nn/modules/rnn.py:65: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='mean' instead.
+  warnings.warn(warning.format(ret))
+LSTM(
+  (layer0): LSTM(76, 256, batch_first=True, dropout=0.3)
+  (layer1): LSTM(256, 256, batch_first=True, dropout=0.3)
+  (do): Dropout(p=0.3, inplace=False)
+  (dense_layer): Linear(in_features=256, out_features=1, bias=True)
+)
+Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.9)
+    eps: 1e-08
+    lr: 0.0001
+    weight_decay: 0
+)
+BCELoss()
+validating ... 
+starting val epoch 0
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/nn/functional.py:718: UserWarning: Named tensors and all their associated APIs are an experimental feature and subject to change. Please do not use them for anything important until they are released as stable. (Triggered internally at  /opt/conda/conda-bld/pytorch_1623448272031/work/c10/core/TensorImpl.h:1156.)
+  return torch.max_pool2d(input, kernel_size, stride, padding, dilation, ceil_mode)
+val [0000 / 0050] validation loss: 	0.71838 	0.00000
+Acute and unspecified renal failure                                                        & 0.481(0.508, 0.456) & 0.124 (0.140, 0.112) 
+
+
+
+lstm test  0   best mean auc :0.481 mean auprc 0.124 
+
+
+                    CI AUROC (0.456, 0.508) CI AUPRC (0.112, 0.140) 
+
+
+                     AUROC accute 0.481 mixed 0.481 chronic 0.481
+
+
+                     AUROC accute CI (0.456, 0.508) mixed (0.456 , 0.508) chronic (0.456, 0.508)
+
+
+                     AUPRC accute  0.124 mixed 0.124 chronic 0.124 
+
+
+                     AUPRC accute CI  (0.112, 0.140) mixed (0.112,  0.140) chronic (0.112, 0.140) 
+
+
+                    

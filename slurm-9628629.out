@@ -1,0 +1,119 @@
+A conda environment has been detected CONDA_PREFIX=
+/sw/external/python/anaconda3_cpu 
+anaconda3_cpu is loaded. Consider running conda deactivate and reloading it.
+cur args is:  Namespace(align=0.0, batch_size=16, beta_1=0.9, crop=224, cxr_data_dir='physionet.org/files/mimic-cxr-jpg/2.0.0', daft_activation='linear', data_pairs='paired_ehr_cxr', data_ratio=1.0, depth=1, dim=256, dropout=0.3, ehr_data_dir='mimic4extract/data', epochs=50, eval=False, fusion='joint', fusion_type='joint', imputation='previous', labels_set='pheno', layer_after=4, layers=2, load_state='checkpoints/phenotyping/joint/best_checkpoint.pth.tar', load_state_cxr=None, load_state_ehr=None, lr=0.0001, missing_token=None, mmtm_ratio=4, mode='eval', network=None, normalizer_state=None, num_classes=25, patience=15, pretrained=False, rec_dropout=0.0, resize=256, resume=False, save_dir='checkpoints/pheno/joint', task='phenotyping', timestep=1.0, vision_backbone='resnet34', vision_num_classes=25)
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+  layer_after                             : 4
+  layers                                  : 2
+  vision_num_classes                      : 25
+  resize                                  : 256
+  crop                                    : 224
+  vision_backbone                         : resnet34
+  pretrained                              : False
+  eval                                    : False
+  network                                 : None
+  fusion_type                             : joint
+  task                                    : phenotyping
+  labels_set                              : pheno
+  data_ratio                              : 1.0
+  mmtm_ratio                              : 4
+  daft_activation                         : linear
+  fusion                                  : joint
+  dim                                     : 256
+  depth                                   : 1
+  epochs                                  : 50
+  load_state                              : checkpoints/phenotyping/joint/best_checkpoint.pth.tar
+  load_state_cxr                          : None
+  load_state_ehr                          : None
+  mode                                    : eval
+  batch_size                              : 16
+  resume                                  : False
+  dropout                                 : 0.3
+  num_classes                             : 25
+  patience                                : 15
+  rec_dropout                             : 0.0
+  timestep                                : 1.0
+  imputation                              : previous
+  lr                                      : 0.0001
+  align                                   : 0.0
+  data_pairs                              : paired_ehr_cxr
+  missing_token                           : None
+  beta_1                                  : 0.9
+  normalizer_state                        : None
+  ehr_data_dir                            : mimic4extract/data
+  cxr_data_dir                            : physionet.org/files/mimic-cxr-jpg/2.0.0
+  save_dir                                : checkpoints/pheno/joint
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/nn/modules/rnn.py:65: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='mean' instead.
+  warnings.warn(warning.format(ret))
+loaded model checkpoint from checkpoints/phenotyping/joint/best_checkpoint.pth.tar
+loaded model checkpoint from checkpoints/phenotyping/joint/best_checkpoint.pth.tar
+LSTM(
+  (layer0): LSTM(76, 256, batch_first=True, dropout=0.3)
+  (layer1): LSTM(256, 256, batch_first=True, dropout=0.3)
+  (do): Dropout(p=0.3, inplace=False)
+  (dense_layer): Linear(in_features=256, out_features=25, bias=True)
+)
+Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.9)
+    eps: 1e-08
+    lr: 0.0001
+    weight_decay: 0
+)
+BCELoss()
+validating ... 
+starting val epoch 0
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/nn/functional.py:718: UserWarning: Named tensors and all their associated APIs are an experimental feature and subject to change. Please do not use them for anything important until they are released as stable. (Triggered internally at  /opt/conda/conda-bld/pytorch_1623448272031/work/c10/core/TensorImpl.h:1156.)
+  return torch.max_pool2d(input, kernel_size, stride, padding, dilation, ceil_mode)
+val [0000 / 0050] validation loss: 	0.42670 	0.00000
+Acute and unspecified renal failure                                                        & 0.767(0.787, 0.744) & 0.591 (0.633, 0.551) 
+Acute cerebrovascular disease                                                              & 0.894(0.919, 0.867) & 0.483 (0.577, 0.407) 
+Acute myocardial infarction                                                                & 0.730(0.762, 0.694) & 0.221 (0.279, 0.180) 
+Cardiac dysrhythmias                                                                       & 0.685(0.709, 0.663) & 0.564 (0.602, 0.529) 
+Chronic kidney disease                                                                     & 0.763(0.784, 0.741) & 0.504 (0.551, 0.459) 
+Chronic obstructive pulmonary disease and bronchiectasis                                   & 0.732(0.762, 0.704) & 0.343 (0.397, 0.298) 
+Complications of surgical procedures or medical care                                       & 0.691(0.715, 0.666) & 0.402 (0.446, 0.361) 
+Conduction disorders                                                                       & 0.796(0.829, 0.761) & 0.510 (0.573, 0.446) 
+Congestive heart failure; nonhypertensive                                                  & 0.788(0.807, 0.765) & 0.623 (0.663, 0.586) 
+Coronary atherosclerosis and other heart disease                                           & 0.749(0.769, 0.727) & 0.602 (0.640, 0.562) 
+Diabetes mellitus with complications                                                       & 0.871(0.892, 0.848) & 0.493 (0.558, 0.432) 
+Diabetes mellitus without complication                                                     & 0.724(0.749, 0.698) & 0.370 (0.413, 0.331) 
+Disorders of lipid metabolism                                                              & 0.699(0.721, 0.677) & 0.589 (0.627, 0.555) 
+Essential hypertension                                                                     & 0.662(0.685, 0.640) & 0.583 (0.618, 0.550) 
+Fluid and electrolyte disorders                                                            & 0.720(0.742, 0.701) & 0.671 (0.704, 0.641) 
+Gastrointestinal hemorrhage                                                                & 0.696(0.738, 0.656) & 0.136 (0.182, 0.108) 
+Hypertension with complications and secondary hypertension                                 & 0.746(0.769, 0.720) & 0.460 (0.508, 0.414) 
+Other liver diseases                                                                       & 0.712(0.741, 0.683) & 0.367 (0.418, 0.322) 
+Other lower respiratory disease                                                            & 0.603(0.638, 0.562) & 0.170 (0.205, 0.146) 
+Other upper respiratory disease                                                            & 0.701(0.749, 0.651) & 0.118 (0.163, 0.090) 
+Pleurisy; pneumothorax; pulmonary collapse                                                 & 0.683(0.723, 0.645) & 0.183 (0.233, 0.150) 
+Pneumonia (except that caused by tuberculosis or sexually transmitted disease)             & 0.768(0.792, 0.744) & 0.393 (0.446, 0.351) 
+Respiratory failure; insufficiency; arrest (adult)                                         & 0.834(0.852, 0.816) & 0.659 (0.697, 0.618) 
+Septicemia (except in labor)                                                               & 0.779(0.800, 0.758) & 0.505 (0.553, 0.460) 
+Shock                                                                                      & 0.823(0.844, 0.800) & 0.523 (0.573, 0.473) 
+
+
+
+joint test  0   best mean auc :0.745 mean auprc 0.442 
+
+
+                    CI AUROC (0.717, 0.771) CI AUPRC (0.401, 0.490) 
+
+
+                     AUROC accute 0.745 mixed 0.770 chronic 0.725
+
+
+                     AUROC accute CI (0.716, 0.774) mixed (0.744 , 0.796) chronic (0.701, 0.748)
+
+
+                     AUPRC accute  0.389 mixed 0.511 chronic 0.493 
+
+
+                     AUPRC accute CI  (0.349, 0.438) mixed (0.463,  0.563) chronic (0.453, 0.536) 
+
+
+                    

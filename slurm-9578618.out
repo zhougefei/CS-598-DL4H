@@ -1,0 +1,1097 @@
+A conda environment has been detected CONDA_PREFIX=
+/u/langzhou/.conda/envs/medfuse 
+anaconda3_cpu is loaded. Consider running conda deactivate and reloading it.
+cur args is:  Namespace(align=0.0, batch_size=16, beta_1=0.9, crop=224, cxr_data_dir='physionet.org/files/mimic-cxr-jpg/2.0.0', daft_activation='linear', data_pairs='paired_ehr_cxr', data_ratio=1.0, depth=1, dim=256, dropout=0.3, ehr_data_dir='mimic4extract/data', epochs=50, eval=False, fusion='joint', fusion_type='joint', imputation='previous', labels_set='mortality', layer_after=4, layers=2, load_state=None, load_state_cxr=None, load_state_ehr=None, lr=4.032e-05, missing_token=None, mmtm_ratio=4, mode='train', network=None, normalizer_state=None, num_classes=1, patience=15, pretrained=False, rec_dropout=0.0, resize=256, resume=False, save_dir='checkpoints/mortality/joint', task='in-hospital-mortality', timestep=1.0, vision_backbone='resnet34', vision_num_classes=1)
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+  layer_after                             : 4
+  layers                                  : 2
+  vision_num_classes                      : 1
+  resize                                  : 256
+  crop                                    : 224
+  vision_backbone                         : resnet34
+  pretrained                              : False
+  eval                                    : False
+  network                                 : None
+  fusion_type                             : joint
+  task                                    : in-hospital-mortality
+  labels_set                              : mortality
+  data_ratio                              : 1.0
+  mmtm_ratio                              : 4
+  daft_activation                         : linear
+  fusion                                  : joint
+  dim                                     : 256
+  depth                                   : 1
+  epochs                                  : 50
+  load_state                              : None
+  load_state_cxr                          : None
+  load_state_ehr                          : None
+  mode                                    : train
+  batch_size                              : 16
+  resume                                  : False
+  dropout                                 : 0.3
+  num_classes                             : 1
+  patience                                : 15
+  rec_dropout                             : 0.0
+  timestep                                : 1.0
+  imputation                              : previous
+  lr                                      : 4.032e-05
+  align                                   : 0.0
+  data_pairs                              : paired_ehr_cxr
+  missing_token                           : None
+  beta_1                                  : 0.9
+  normalizer_state                        : None
+  ehr_data_dir                            : mimic4extract/data
+  cxr_data_dir                            : physionet.org/files/mimic-cxr-jpg/2.0.0
+  save_dir                                : checkpoints/mortality/joint
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/nn/modules/rnn.py:65: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='mean' instead.
+  warnings.warn(warning.format(ret))
+LSTM(
+  (layer0): LSTM(76, 256, batch_first=True, dropout=0.3)
+  (layer1): LSTM(256, 256, batch_first=True, dropout=0.3)
+  (do): Dropout(p=0.3, inplace=False)
+  (dense_layer): Linear(in_features=256, out_features=1, bias=True)
+)
+Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.9)
+    eps: 1e-08
+    lr: 4.032e-05
+    weight_decay: 0
+)
+BCELoss()
+==> training
+running for fusion_type joint
+starting val epoch 1
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/nn/functional.py:718: UserWarning: Named tensors and all their associated APIs are an experimental feature and subject to change. Please do not use them for anything important until they are released as stable. (Triggered internally at  /opt/conda/conda-bld/pytorch_1623448272031/work/c10/core/TensorImpl.h:1156.)
+  return torch.max_pool2d(input, kernel_size, stride, padding, dilation, ceil_mode)
+val [0001 / 0050] validation loss: 	0.70849 	0.00000
+saving last checkpoint at epoch 1
+saving best checkpoint at epoch 1
+Acute and unspecified renal failure                                                        & 0.551(0.622, 0.481) & 0.175 (0.250, 0.129) 
+
+
+
+val  1   best mean auc :0.551 mean auprc 0.175 
+
+
+                    CI AUROC (0.481, 0.622) CI AUPRC (0.129, 0.250) 
+
+
+                     AUROC accute 0.551 mixed 0.551 chronic 0.551
+
+
+                     AUROC accute CI (0.481, 0.622) mixed (0.481 , 0.622) chronic (0.481, 0.622)
+
+
+                     AUPRC accute  0.175 mixed 0.175 chronic 0.175 
+
+
+                     AUPRC accute CI  (0.129, 0.250) mixed (0.129,  0.250) chronic (0.129, 0.250) 
+
+
+                    
+starting train epoch 1
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0001 / 0050] [0009/280] eta: 2 Days 12:57:20       lr: 	4.0320E-05 loss: 	0.59907 loss align 0.0000
+ epoch [0001 / 0050] [0109/280] eta: 0 Days 22:58:47       lr: 	4.0320E-05 loss: 	0.42861 loss align 0.0000
+ epoch [0001 / 0050] [0209/280] eta: 0 Days 21:2:5         lr: 	4.0320E-05 loss: 	0.42230 loss align 0.0000
+starting val epoch 2
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0002 / 0050] validation loss: 	0.37495 	0.00000
+saving last checkpoint at epoch 2
+saving best checkpoint at epoch 2
+Acute and unspecified renal failure                                                        & 0.753(0.806, 0.697) & 0.304 (0.410, 0.235) 
+
+
+
+val  2   best mean auc :0.753 mean auprc 0.304 
+
+
+                    CI AUROC (0.697, 0.806) CI AUPRC (0.235, 0.410) 
+
+
+                     AUROC accute 0.753 mixed 0.753 chronic 0.753
+
+
+                     AUROC accute CI (0.697, 0.806) mixed (0.697 , 0.806) chronic (0.697, 0.806)
+
+
+                     AUPRC accute  0.304 mixed 0.304 chronic 0.304 
+
+
+                     AUPRC accute CI  (0.235, 0.410) mixed (0.235,  0.410) chronic (0.235, 0.410) 
+
+
+                    
+starting train epoch 2
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0002 / 0050] [0009/280] eta: 0 Days 21:52:45       lr: 	4.0320E-05 loss: 	0.33250 loss align 0.0000
+ epoch [0002 / 0050] [0109/280] eta: 0 Days 21:0:29        lr: 	4.0320E-05 loss: 	0.36773 loss align 0.0000
+ epoch [0002 / 0050] [0209/280] eta: 0 Days 20:25:54       lr: 	4.0320E-05 loss: 	0.35453 loss align 0.0000
+starting val epoch 3
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0003 / 0050] validation loss: 	0.37153 	0.00000
+saving last checkpoint at epoch 3
+saving best checkpoint at epoch 3
+Acute and unspecified renal failure                                                        & 0.768(0.822, 0.710) & 0.318 (0.425, 0.245) 
+
+
+
+val  3   best mean auc :0.768 mean auprc 0.318 
+
+
+                    CI AUROC (0.710, 0.822) CI AUPRC (0.245, 0.425) 
+
+
+                     AUROC accute 0.768 mixed 0.768 chronic 0.768
+
+
+                     AUROC accute CI (0.710, 0.822) mixed (0.710 , 0.822) chronic (0.710, 0.822)
+
+
+                     AUPRC accute  0.318 mixed 0.318 chronic 0.318 
+
+
+                     AUPRC accute CI  (0.245, 0.425) mixed (0.245,  0.425) chronic (0.245, 0.425) 
+
+
+                    
+starting train epoch 3
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0003 / 0050] [0009/280] eta: 0 Days 20:48:41       lr: 	4.0320E-05 loss: 	0.37752 loss align 0.0000
+ epoch [0003 / 0050] [0109/280] eta: 0 Days 20:20:30       lr: 	4.0320E-05 loss: 	0.36113 loss align 0.0000
+ epoch [0003 / 0050] [0209/280] eta: 0 Days 19:57:18       lr: 	4.0320E-05 loss: 	0.35303 loss align 0.0000
+starting val epoch 4
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0004 / 0050] validation loss: 	0.37339 	0.00000
+saving last checkpoint at epoch 4
+saving best checkpoint at epoch 4
+Acute and unspecified renal failure                                                        & 0.780(0.835, 0.724) & 0.333 (0.439, 0.258) 
+
+
+
+val  4   best mean auc :0.780 mean auprc 0.333 
+
+
+                    CI AUROC (0.724, 0.835) CI AUPRC (0.258, 0.439) 
+
+
+                     AUROC accute 0.780 mixed 0.780 chronic 0.780
+
+
+                     AUROC accute CI (0.724, 0.835) mixed (0.724 , 0.835) chronic (0.724, 0.835)
+
+
+                     AUPRC accute  0.333 mixed 0.333 chronic 0.333 
+
+
+                     AUPRC accute CI  (0.258, 0.439) mixed (0.258,  0.439) chronic (0.258, 0.439) 
+
+
+                    
+starting train epoch 4
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0004 / 0050] [0009/280] eta: 0 Days 20:10:16       lr: 	4.0320E-05 loss: 	0.32382 loss align 0.0000
+ epoch [0004 / 0050] [0109/280] eta: 0 Days 19:49:8        lr: 	4.0320E-05 loss: 	0.35038 loss align 0.0000
+ epoch [0004 / 0050] [0209/280] eta: 0 Days 19:30:15       lr: 	4.0320E-05 loss: 	0.35025 loss align 0.0000
+starting val epoch 5
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0005 / 0050] validation loss: 	0.36720 	0.00000
+saving last checkpoint at epoch 5
+saving best checkpoint at epoch 5
+Acute and unspecified renal failure                                                        & 0.787(0.836, 0.732) & 0.343 (0.450, 0.263) 
+
+
+
+val  5   best mean auc :0.787 mean auprc 0.343 
+
+
+                    CI AUROC (0.732, 0.836) CI AUPRC (0.263, 0.450) 
+
+
+                     AUROC accute 0.787 mixed 0.787 chronic 0.787
+
+
+                     AUROC accute CI (0.732, 0.836) mixed (0.732 , 0.836) chronic (0.732, 0.836)
+
+
+                     AUPRC accute  0.343 mixed 0.343 chronic 0.343 
+
+
+                     AUPRC accute CI  (0.263, 0.450) mixed (0.263,  0.450) chronic (0.263, 0.450) 
+
+
+                    
+starting train epoch 5
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0005 / 0050] [0009/280] eta: 0 Days 19:37:36       lr: 	4.0320E-05 loss: 	0.33678 loss align 0.0000
+ epoch [0005 / 0050] [0109/280] eta: 0 Days 19:19:54       lr: 	4.0320E-05 loss: 	0.30844 loss align 0.0000
+ epoch [0005 / 0050] [0209/280] eta: 0 Days 19:3:33        lr: 	4.0320E-05 loss: 	0.33410 loss align 0.0000
+starting val epoch 6
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0006 / 0050] validation loss: 	0.35885 	0.00000
+saving last checkpoint at epoch 6
+saving best checkpoint at epoch 6
+Acute and unspecified renal failure                                                        & 0.793(0.844, 0.736) & 0.348 (0.465, 0.262) 
+
+
+
+val  6   best mean auc :0.793 mean auprc 0.348 
+
+
+                    CI AUROC (0.736, 0.844) CI AUPRC (0.262, 0.465) 
+
+
+                     AUROC accute 0.793 mixed 0.793 chronic 0.793
+
+
+                     AUROC accute CI (0.736, 0.844) mixed (0.736 , 0.844) chronic (0.736, 0.844)
+
+
+                     AUPRC accute  0.348 mixed 0.348 chronic 0.348 
+
+
+                     AUPRC accute CI  (0.262, 0.465) mixed (0.262,  0.465) chronic (0.262, 0.465) 
+
+
+                    
+starting train epoch 6
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0006 / 0050] [0009/280] eta: 0 Days 19:8:14        lr: 	4.0320E-05 loss: 	0.36357 loss align 0.0000
+ epoch [0006 / 0050] [0109/280] eta: 0 Days 18:52:29       lr: 	4.0320E-05 loss: 	0.34397 loss align 0.0000
+ epoch [0006 / 0050] [0209/280] eta: 0 Days 18:37:34       lr: 	4.0320E-05 loss: 	0.34324 loss align 0.0000
+starting val epoch 7
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0007 / 0050] validation loss: 	0.36263 	0.00000
+saving last checkpoint at epoch 7
+saving best checkpoint at epoch 7
+Acute and unspecified renal failure                                                        & 0.799(0.850, 0.745) & 0.355 (0.460, 0.278) 
+
+
+
+val  7   best mean auc :0.799 mean auprc 0.355 
+
+
+                    CI AUROC (0.745, 0.850) CI AUPRC (0.278, 0.460) 
+
+
+                     AUROC accute 0.799 mixed 0.799 chronic 0.799
+
+
+                     AUROC accute CI (0.745, 0.850) mixed (0.745 , 0.850) chronic (0.745, 0.850)
+
+
+                     AUPRC accute  0.355 mixed 0.355 chronic 0.355 
+
+
+                     AUPRC accute CI  (0.278, 0.460) mixed (0.278,  0.460) chronic (0.278, 0.460) 
+
+
+                    
+starting train epoch 7
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0007 / 0050] [0009/280] eta: 0 Days 18:39:52       lr: 	4.0320E-05 loss: 	0.39330 loss align 0.0000
+ epoch [0007 / 0050] [0109/280] eta: 0 Days 18:25:24       lr: 	4.0320E-05 loss: 	0.35157 loss align 0.0000
+ epoch [0007 / 0050] [0209/280] eta: 0 Days 18:11:31       lr: 	4.0320E-05 loss: 	0.33786 loss align 0.0000
+starting val epoch 8
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0008 / 0050] validation loss: 	0.34798 	0.00000
+saving last checkpoint at epoch 8
+saving best checkpoint at epoch 8
+Acute and unspecified renal failure                                                        & 0.802(0.853, 0.748) & 0.367 (0.480, 0.282) 
+
+
+
+val  8   best mean auc :0.802 mean auprc 0.367 
+
+
+                    CI AUROC (0.748, 0.853) CI AUPRC (0.282, 0.480) 
+
+
+                     AUROC accute 0.802 mixed 0.802 chronic 0.802
+
+
+                     AUROC accute CI (0.748, 0.853) mixed (0.748 , 0.853) chronic (0.748, 0.853)
+
+
+                     AUPRC accute  0.367 mixed 0.367 chronic 0.367 
+
+
+                     AUPRC accute CI  (0.282, 0.480) mixed (0.282,  0.480) chronic (0.282, 0.480) 
+
+
+                    
+starting train epoch 8
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0008 / 0050] [0009/280] eta: 0 Days 18:12:8        lr: 	4.0320E-05 loss: 	0.40410 loss align 0.0000
+ epoch [0008 / 0050] [0109/280] eta: 0 Days 17:58:34       lr: 	4.0320E-05 loss: 	0.32748 loss align 0.0000
+ epoch [0008 / 0050] [0209/280] eta: 0 Days 17:45:22       lr: 	4.0320E-05 loss: 	0.32573 loss align 0.0000
+starting val epoch 9
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0009 / 0050] validation loss: 	0.35554 	0.00000
+saving last checkpoint at epoch 9
+saving best checkpoint at epoch 9
+Acute and unspecified renal failure                                                        & 0.803(0.853, 0.745) & 0.367 (0.476, 0.288) 
+
+
+
+val  9   best mean auc :0.803 mean auprc 0.367 
+
+
+                    CI AUROC (0.745, 0.853) CI AUPRC (0.288, 0.476) 
+
+
+                     AUROC accute 0.803 mixed 0.803 chronic 0.803
+
+
+                     AUROC accute CI (0.745, 0.853) mixed (0.745 , 0.853) chronic (0.745, 0.853)
+
+
+                     AUPRC accute  0.367 mixed 0.367 chronic 0.367 
+
+
+                     AUPRC accute CI  (0.288, 0.476) mixed (0.288,  0.476) chronic (0.288, 0.476) 
+
+
+                    
+starting train epoch 9
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0009 / 0050] [0009/280] eta: 0 Days 17:44:52       lr: 	4.0320E-05 loss: 	0.39460 loss align 0.0000
+ epoch [0009 / 0050] [0109/280] eta: 0 Days 17:31:57       lr: 	4.0320E-05 loss: 	0.32040 loss align 0.0000
+ epoch [0009 / 0050] [0209/280] eta: 0 Days 17:19:20       lr: 	4.0320E-05 loss: 	0.33392 loss align 0.0000
+starting val epoch 10
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0010 / 0050] validation loss: 	0.35763 	0.00000
+saving last checkpoint at epoch 10
+saving best checkpoint at epoch 10
+Acute and unspecified renal failure                                                        & 0.804(0.855, 0.750) & 0.380 (0.499, 0.292) 
+
+
+
+val  10  best mean auc :0.804 mean auprc 0.380 
+
+
+                    CI AUROC (0.750, 0.855) CI AUPRC (0.292, 0.499) 
+
+
+                     AUROC accute 0.804 mixed 0.804 chronic 0.804
+
+
+                     AUROC accute CI (0.750, 0.855) mixed (0.750 , 0.855) chronic (0.750, 0.855)
+
+
+                     AUPRC accute  0.380 mixed 0.380 chronic 0.380 
+
+
+                     AUPRC accute CI  (0.292, 0.499) mixed (0.292,  0.499) chronic (0.292, 0.499) 
+
+
+                    
+starting train epoch 10
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0010 / 0050] [0009/280] eta: 0 Days 17:18:4        lr: 	4.0320E-05 loss: 	0.37768 loss align 0.0000
+ epoch [0010 / 0050] [0109/280] eta: 0 Days 17:5:35        lr: 	4.0320E-05 loss: 	0.33514 loss align 0.0000
+ epoch [0010 / 0050] [0209/280] eta: 0 Days 16:53:27       lr: 	4.0320E-05 loss: 	0.33372 loss align 0.0000
+starting val epoch 11
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0011 / 0050] validation loss: 	0.34845 	0.00000
+saving last checkpoint at epoch 11
+saving best checkpoint at epoch 11
+Acute and unspecified renal failure                                                        & 0.806(0.859, 0.748) & 0.374 (0.494, 0.292) 
+
+
+
+val  11  best mean auc :0.806 mean auprc 0.374 
+
+
+                    CI AUROC (0.748, 0.859) CI AUPRC (0.292, 0.494) 
+
+
+                     AUROC accute 0.806 mixed 0.806 chronic 0.806
+
+
+                     AUROC accute CI (0.748, 0.859) mixed (0.748 , 0.859) chronic (0.748, 0.859)
+
+
+                     AUPRC accute  0.374 mixed 0.374 chronic 0.374 
+
+
+                     AUPRC accute CI  (0.292, 0.494) mixed (0.292,  0.494) chronic (0.292, 0.494) 
+
+
+                    
+starting train epoch 11
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0011 / 0050] [0009/280] eta: 0 Days 16:51:29       lr: 	4.0320E-05 loss: 	0.33287 loss align 0.0000
+ epoch [0011 / 0050] [0109/280] eta: 0 Days 16:39:27       lr: 	4.0320E-05 loss: 	0.33028 loss align 0.0000
+ epoch [0011 / 0050] [0209/280] eta: 0 Days 16:27:38       lr: 	4.0320E-05 loss: 	0.33479 loss align 0.0000
+starting val epoch 12
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0012 / 0050] validation loss: 	0.35595 	0.00000
+saving last checkpoint at epoch 12
+saving best checkpoint at epoch 12
+Acute and unspecified renal failure                                                        & 0.807(0.856, 0.750) & 0.374 (0.489, 0.294) 
+
+
+
+val  12  best mean auc :0.807 mean auprc 0.374 
+
+
+                    CI AUROC (0.750, 0.856) CI AUPRC (0.294, 0.489) 
+
+
+                     AUROC accute 0.807 mixed 0.807 chronic 0.807
+
+
+                     AUROC accute CI (0.750, 0.856) mixed (0.750 , 0.856) chronic (0.750, 0.856)
+
+
+                     AUPRC accute  0.374 mixed 0.374 chronic 0.374 
+
+
+                     AUPRC accute CI  (0.294, 0.489) mixed (0.294,  0.489) chronic (0.294, 0.489) 
+
+
+                    
+starting train epoch 12
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0012 / 0050] [0009/280] eta: 0 Days 16:24:51       lr: 	4.0320E-05 loss: 	0.45158 loss align 0.0000
+ epoch [0012 / 0050] [0109/280] eta: 0 Days 16:13:8        lr: 	4.0320E-05 loss: 	0.31853 loss align 0.0000
+ epoch [0012 / 0050] [0209/280] eta: 0 Days 16:1:38        lr: 	4.0320E-05 loss: 	0.32946 loss align 0.0000
+starting val epoch 13
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0013 / 0050] validation loss: 	0.34652 	0.00000
+saving last checkpoint at epoch 13
+saving best checkpoint at epoch 13
+Acute and unspecified renal failure                                                        & 0.810(0.862, 0.753) & 0.380 (0.493, 0.300) 
+
+
+
+val  13  best mean auc :0.810 mean auprc 0.380 
+
+
+                    CI AUROC (0.753, 0.862) CI AUPRC (0.300, 0.493) 
+
+
+                     AUROC accute 0.810 mixed 0.810 chronic 0.810
+
+
+                     AUROC accute CI (0.753, 0.862) mixed (0.753 , 0.862) chronic (0.753, 0.862)
+
+
+                     AUPRC accute  0.380 mixed 0.380 chronic 0.380 
+
+
+                     AUPRC accute CI  (0.300, 0.493) mixed (0.300,  0.493) chronic (0.300, 0.493) 
+
+
+                    
+starting train epoch 13
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0013 / 0050] [0009/280] eta: 0 Days 15:58:25       lr: 	4.0320E-05 loss: 	0.42614 loss align 0.0000
+ epoch [0013 / 0050] [0109/280] eta: 0 Days 15:47:0        lr: 	4.0320E-05 loss: 	0.34119 loss align 0.0000
+ epoch [0013 / 0050] [0209/280] eta: 0 Days 15:35:44       lr: 	4.0320E-05 loss: 	0.32229 loss align 0.0000
+starting val epoch 14
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0014 / 0050] validation loss: 	0.34313 	0.00000
+saving last checkpoint at epoch 14
+saving best checkpoint at epoch 14
+Acute and unspecified renal failure                                                        & 0.812(0.860, 0.757) & 0.396 (0.511, 0.307) 
+
+
+
+val  14  best mean auc :0.812 mean auprc 0.396 
+
+
+                    CI AUROC (0.757, 0.860) CI AUPRC (0.307, 0.511) 
+
+
+                     AUROC accute 0.812 mixed 0.812 chronic 0.812
+
+
+                     AUROC accute CI (0.757, 0.860) mixed (0.757 , 0.860) chronic (0.757, 0.860)
+
+
+                     AUPRC accute  0.396 mixed 0.396 chronic 0.396 
+
+
+                     AUPRC accute CI  (0.307, 0.511) mixed (0.307,  0.511) chronic (0.307, 0.511) 
+
+
+                    
+starting train epoch 14
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0014 / 0050] [0009/280] eta: 0 Days 15:32:8        lr: 	4.0320E-05 loss: 	0.40589 loss align 0.0000
+ epoch [0014 / 0050] [0109/280] eta: 0 Days 15:20:57       lr: 	4.0320E-05 loss: 	0.31292 loss align 0.0000
+ epoch [0014 / 0050] [0209/280] eta: 0 Days 15:9:52        lr: 	4.0320E-05 loss: 	0.32794 loss align 0.0000
+starting val epoch 15
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0015 / 0050] validation loss: 	0.34266 	0.00000
+saving last checkpoint at epoch 15
+saving best checkpoint at epoch 15
+Acute and unspecified renal failure                                                        & 0.815(0.866, 0.761) & 0.405 (0.545, 0.310) 
+
+
+
+val  15  best mean auc :0.815 mean auprc 0.405 
+
+
+                    CI AUROC (0.761, 0.866) CI AUPRC (0.310, 0.545) 
+
+
+                     AUROC accute 0.815 mixed 0.815 chronic 0.815
+
+
+                     AUROC accute CI (0.761, 0.866) mixed (0.761 , 0.866) chronic (0.761, 0.866)
+
+
+                     AUPRC accute  0.405 mixed 0.405 chronic 0.405 
+
+
+                     AUPRC accute CI  (0.310, 0.545) mixed (0.310,  0.545) chronic (0.310, 0.545) 
+
+
+                    
+starting train epoch 15
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0015 / 0050] [0009/280] eta: 0 Days 15:5:49        lr: 	4.0320E-05 loss: 	0.38810 loss align 0.0000
+ epoch [0015 / 0050] [0109/280] eta: 0 Days 14:54:50       lr: 	4.0320E-05 loss: 	0.35152 loss align 0.0000
+ epoch [0015 / 0050] [0209/280] eta: 0 Days 14:43:57       lr: 	4.0320E-05 loss: 	0.33098 loss align 0.0000
+starting val epoch 16
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0016 / 0050] validation loss: 	0.34262 	0.00000
+saving last checkpoint at epoch 16
+
+
+
+val  16  mean auc :0.814199 mean auprc 0.406909
+
+
+ 
+starting train epoch 16
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0016 / 0050] [0009/280] eta: 0 Days 14:39:37       lr: 	4.0320E-05 loss: 	0.37441 loss align 0.0000
+ epoch [0016 / 0050] [0109/280] eta: 0 Days 14:28:48       lr: 	4.0320E-05 loss: 	0.32213 loss align 0.0000
+ epoch [0016 / 0050] [0209/280] eta: 0 Days 14:18:3        lr: 	4.0320E-05 loss: 	0.31756 loss align 0.0000
+starting val epoch 17
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0017 / 0050] validation loss: 	0.34866 	0.00000
+saving last checkpoint at epoch 17
+saving best checkpoint at epoch 17
+Acute and unspecified renal failure                                                        & 0.815(0.867, 0.762) & 0.411 (0.531, 0.312) 
+
+
+
+val  17  best mean auc :0.815 mean auprc 0.411 
+
+
+                    CI AUROC (0.762, 0.867) CI AUPRC (0.312, 0.531) 
+
+
+                     AUROC accute 0.815 mixed 0.815 chronic 0.815
+
+
+                     AUROC accute CI (0.762, 0.867) mixed (0.762 , 0.867) chronic (0.762, 0.867)
+
+
+                     AUPRC accute  0.411 mixed 0.411 chronic 0.411 
+
+
+                     AUPRC accute CI  (0.312, 0.531) mixed (0.312,  0.531) chronic (0.312, 0.531) 
+
+
+                    
+starting train epoch 17
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0017 / 0050] [0009/280] eta: 0 Days 14:13:31       lr: 	4.0320E-05 loss: 	0.38184 loss align 0.0000
+ epoch [0017 / 0050] [0109/280] eta: 0 Days 14:2:52        lr: 	4.0320E-05 loss: 	0.32195 loss align 0.0000
+ epoch [0017 / 0050] [0209/280] eta: 0 Days 13:52:15       lr: 	4.0320E-05 loss: 	0.31636 loss align 0.0000
+starting val epoch 18
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0018 / 0050] validation loss: 	0.33991 	0.00000
+saving last checkpoint at epoch 18
+saving best checkpoint at epoch 18
+Acute and unspecified renal failure                                                        & 0.820(0.872, 0.766) & 0.411 (0.545, 0.318) 
+
+
+
+val  18  best mean auc :0.820 mean auprc 0.411 
+
+
+                    CI AUROC (0.766, 0.872) CI AUPRC (0.318, 0.545) 
+
+
+                     AUROC accute 0.820 mixed 0.820 chronic 0.820
+
+
+                     AUROC accute CI (0.766, 0.872) mixed (0.766 , 0.872) chronic (0.766, 0.872)
+
+
+                     AUPRC accute  0.411 mixed 0.411 chronic 0.411 
+
+
+                     AUPRC accute CI  (0.318, 0.545) mixed (0.318,  0.545) chronic (0.318, 0.545) 
+
+
+                    
+starting train epoch 18
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0018 / 0050] [0009/280] eta: 0 Days 13:47:27       lr: 	4.0320E-05 loss: 	0.39382 loss align 0.0000
+ epoch [0018 / 0050] [0109/280] eta: 0 Days 13:36:53       lr: 	4.0320E-05 loss: 	0.29653 loss align 0.0000
+ epoch [0018 / 0050] [0209/280] eta: 0 Days 13:26:24       lr: 	4.0320E-05 loss: 	0.31109 loss align 0.0000
+starting val epoch 19
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0019 / 0050] validation loss: 	0.33798 	0.00000
+saving last checkpoint at epoch 19
+
+
+
+val  19  mean auc :0.818185 mean auprc 0.414691
+
+
+ 
+starting train epoch 19
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0019 / 0050] [0009/280] eta: 0 Days 13:21:17       lr: 	4.0320E-05 loss: 	0.31325 loss align 0.0000
+ epoch [0019 / 0050] [0109/280] eta: 0 Days 13:10:50       lr: 	4.0320E-05 loss: 	0.29968 loss align 0.0000
+ epoch [0019 / 0050] [0209/280] eta: 0 Days 13:0:27        lr: 	4.0320E-05 loss: 	0.30940 loss align 0.0000
+starting val epoch 20
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0020 / 0050] validation loss: 	0.34188 	0.00000
+saving last checkpoint at epoch 20
+
+
+
+val  20  mean auc :0.815956 mean auprc 0.417393
+
+
+ 
+starting train epoch 20
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0020 / 0050] [0009/280] eta: 0 Days 12:55:10       lr: 	4.0320E-05 loss: 	0.30869 loss align 0.0000
+ epoch [0020 / 0050] [0109/280] eta: 0 Days 12:44:50       lr: 	4.0320E-05 loss: 	0.31897 loss align 0.0000
+ epoch [0020 / 0050] [0209/280] eta: 0 Days 12:34:34       lr: 	4.0320E-05 loss: 	0.32118 loss align 0.0000
+starting val epoch 21
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0021 / 0050] validation loss: 	0.33988 	0.00000
+saving last checkpoint at epoch 21
+
+
+
+val  21  mean auc :0.817037 mean auprc 0.431117
+
+
+ 
+starting train epoch 21
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0021 / 0050] [0009/280] eta: 0 Days 12:29:6        lr: 	4.0320E-05 loss: 	0.32507 loss align 0.0000
+ epoch [0021 / 0050] [0109/280] eta: 0 Days 12:18:52       lr: 	4.0320E-05 loss: 	0.30434 loss align 0.0000
+ epoch [0021 / 0050] [0209/280] eta: 0 Days 12:8:41        lr: 	4.0320E-05 loss: 	0.31684 loss align 0.0000
+starting val epoch 22
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0022 / 0050] validation loss: 	0.33617 	0.00000
+saving last checkpoint at epoch 22
+saving best checkpoint at epoch 22
+Acute and unspecified renal failure                                                        & 0.822(0.873, 0.767) & 0.437 (0.569, 0.336) 
+
+
+
+val  22  best mean auc :0.822 mean auprc 0.437 
+
+
+                    CI AUROC (0.767, 0.873) CI AUPRC (0.336, 0.569) 
+
+
+                     AUROC accute 0.822 mixed 0.822 chronic 0.822
+
+
+                     AUROC accute CI (0.767, 0.873) mixed (0.767 , 0.873) chronic (0.767, 0.873)
+
+
+                     AUPRC accute  0.437 mixed 0.437 chronic 0.437 
+
+
+                     AUPRC accute CI  (0.336, 0.569) mixed (0.336,  0.569) chronic (0.336, 0.569) 
+
+
+                    
+starting train epoch 22
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0022 / 0050] [0009/280] eta: 0 Days 12:3:8         lr: 	4.0320E-05 loss: 	0.33452 loss align 0.0000
+ epoch [0022 / 0050] [0109/280] eta: 0 Days 11:52:59       lr: 	4.0320E-05 loss: 	0.30999 loss align 0.0000
+ epoch [0022 / 0050] [0209/280] eta: 0 Days 11:42:52       lr: 	4.0320E-05 loss: 	0.31254 loss align 0.0000
+starting val epoch 23
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0023 / 0050] validation loss: 	0.33744 	0.00000
+saving last checkpoint at epoch 23
+saving best checkpoint at epoch 23
+Acute and unspecified renal failure                                                        & 0.825(0.871, 0.773) & 0.433 (0.560, 0.336) 
+
+
+
+val  23  best mean auc :0.825 mean auprc 0.433 
+
+
+                    CI AUROC (0.773, 0.871) CI AUPRC (0.336, 0.560) 
+
+
+                     AUROC accute 0.825 mixed 0.825 chronic 0.825
+
+
+                     AUROC accute CI (0.773, 0.871) mixed (0.773 , 0.871) chronic (0.773, 0.871)
+
+
+                     AUPRC accute  0.433 mixed 0.433 chronic 0.433 
+
+
+                     AUPRC accute CI  (0.336, 0.560) mixed (0.336,  0.560) chronic (0.336, 0.560) 
+
+
+                    
+starting train epoch 23
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0023 / 0050] [0009/280] eta: 0 Days 11:37:9        lr: 	4.0320E-05 loss: 	0.43391 loss align 0.0000
+ epoch [0023 / 0050] [0109/280] eta: 0 Days 11:27:5        lr: 	4.0320E-05 loss: 	0.32672 loss align 0.0000
+ epoch [0023 / 0050] [0209/280] eta: 0 Days 11:17:3        lr: 	4.0320E-05 loss: 	0.31765 loss align 0.0000
+starting val epoch 24
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0024 / 0050] validation loss: 	0.34234 	0.00000
+saving last checkpoint at epoch 24
+
+
+
+val  24  mean auc :0.819739 mean auprc 0.437575
+
+
+ 
+starting train epoch 24
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0024 / 0050] [0009/280] eta: 0 Days 11:11:14       lr: 	4.0320E-05 loss: 	0.35559 loss align 0.0000
+ epoch [0024 / 0050] [0109/280] eta: 0 Days 11:1:14        lr: 	4.0320E-05 loss: 	0.31204 loss align 0.0000
+ epoch [0024 / 0050] [0209/280] eta: 0 Days 10:51:15       lr: 	4.0320E-05 loss: 	0.31994 loss align 0.0000
+starting val epoch 25
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0025 / 0050] validation loss: 	0.33760 	0.00000
+saving last checkpoint at epoch 25
+
+
+
+val  25  mean auc :0.822069 mean auprc 0.451927
+
+
+ 
+starting train epoch 25
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0025 / 0050] [0009/280] eta: 0 Days 10:45:15       lr: 	4.0320E-05 loss: 	0.37805 loss align 0.0000
+ epoch [0025 / 0050] [0109/280] eta: 0 Days 10:35:20       lr: 	4.0320E-05 loss: 	0.31788 loss align 0.0000
+ epoch [0025 / 0050] [0209/280] eta: 0 Days 10:25:25       lr: 	4.0320E-05 loss: 	0.31656 loss align 0.0000
+starting val epoch 26
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0026 / 0050] validation loss: 	0.34771 	0.00000
+saving last checkpoint at epoch 26
+
+
+
+val  26  mean auc :0.818523 mean auprc 0.426292
+
+
+ 
+starting train epoch 26
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0026 / 0050] [0009/280] eta: 0 Days 10:19:23       lr: 	4.0320E-05 loss: 	0.31242 loss align 0.0000
+ epoch [0026 / 0050] [0109/280] eta: 0 Days 10:9:29        lr: 	4.0320E-05 loss: 	0.31011 loss align 0.0000
+ epoch [0026 / 0050] [0209/280] eta: 0 Days 9:59:38        lr: 	4.0320E-05 loss: 	0.31881 loss align 0.0000
+starting val epoch 27
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0027 / 0050] validation loss: 	0.34992 	0.00000
+saving last checkpoint at epoch 27
+
+
+
+val  27  mean auc :0.817948 mean auprc 0.436763
+
+
+ 
+starting train epoch 27
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0027 / 0050] [0009/280] eta: 0 Days 9:53:26        lr: 	4.0320E-05 loss: 	0.40194 loss align 0.0000
+ epoch [0027 / 0050] [0109/280] eta: 0 Days 9:43:36        lr: 	4.0320E-05 loss: 	0.30553 loss align 0.0000
+ epoch [0027 / 0050] [0209/280] eta: 0 Days 9:33:47        lr: 	4.0320E-05 loss: 	0.30819 loss align 0.0000
+starting val epoch 28
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0028 / 0050] validation loss: 	0.36389 	0.00000
+saving last checkpoint at epoch 28
+
+
+
+val  28  mean auc :0.811970 mean auprc 0.450301
+
+
+ 
+starting train epoch 28
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0028 / 0050] [0009/280] eta: 0 Days 9:27:31        lr: 	4.0320E-05 loss: 	0.42733 loss align 0.0000
+ epoch [0028 / 0050] [0109/280] eta: 0 Days 9:17:44        lr: 	4.0320E-05 loss: 	0.31221 loss align 0.0000
+ epoch [0028 / 0050] [0209/280] eta: 0 Days 9:7:59         lr: 	4.0320E-05 loss: 	0.31054 loss align 0.0000
+starting val epoch 29
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0029 / 0050] validation loss: 	0.33719 	0.00000
+saving last checkpoint at epoch 29
+
+
+
+val  29  mean auc :0.823859 mean auprc 0.450885
+
+
+ 
+starting train epoch 29
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0029 / 0050] [0009/280] eta: 0 Days 9:1:38         lr: 	4.0320E-05 loss: 	0.33013 loss align 0.0000
+ epoch [0029 / 0050] [0109/280] eta: 0 Days 8:51:54        lr: 	4.0320E-05 loss: 	0.32150 loss align 0.0000
+ epoch [0029 / 0050] [0209/280] eta: 0 Days 8:42:11        lr: 	4.0320E-05 loss: 	0.30977 loss align 0.0000
+starting val epoch 30
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0030 / 0050] validation loss: 	0.35803 	0.00000
+saving last checkpoint at epoch 30
+
+
+
+val  30  mean auc :0.808525 mean auprc 0.442576
+
+
+ 
+starting train epoch 30
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0030 / 0050] [0009/280] eta: 0 Days 8:35:44        lr: 	4.0320E-05 loss: 	0.31410 loss align 0.0000
+ epoch [0030 / 0050] [0109/280] eta: 0 Days 8:26:3         lr: 	4.0320E-05 loss: 	0.32149 loss align 0.0000
+ epoch [0030 / 0050] [0209/280] eta: 0 Days 8:16:23        lr: 	4.0320E-05 loss: 	0.31038 loss align 0.0000
+starting val epoch 31
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0031 / 0050] validation loss: 	0.34256 	0.00000
+saving last checkpoint at epoch 31
+
+
+
+val  31  mean auc :0.813828 mean auprc 0.423121
+
+
+ 
+starting train epoch 31
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0031 / 0050] [0009/280] eta: 0 Days 8:9:51         lr: 	4.0320E-05 loss: 	0.34503 loss align 0.0000
+ epoch [0031 / 0050] [0109/280] eta: 0 Days 8:0:13         lr: 	4.0320E-05 loss: 	0.29825 loss align 0.0000
+ epoch [0031 / 0050] [0209/280] eta: 0 Days 7:50:35        lr: 	4.0320E-05 loss: 	0.30581 loss align 0.0000
+starting val epoch 32
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0032 / 0050] validation loss: 	0.35275 	0.00000
+saving last checkpoint at epoch 32
+
+
+
+val  32  mean auc :0.810754 mean auprc 0.438016
+
+
+ 
+starting train epoch 32
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0032 / 0050] [0009/280] eta: 0 Days 7:43:59        lr: 	4.0320E-05 loss: 	0.29925 loss align 0.0000
+ epoch [0032 / 0050] [0109/280] eta: 0 Days 7:34:22        lr: 	4.0320E-05 loss: 	0.29721 loss align 0.0000
+ epoch [0032 / 0050] [0209/280] eta: 0 Days 7:24:47        lr: 	4.0320E-05 loss: 	0.30866 loss align 0.0000
+starting val epoch 33
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0033 / 0050] validation loss: 	0.34931 	0.00000
+saving last checkpoint at epoch 33
+
+
+
+val  33  mean auc :0.813726 mean auprc 0.446092
+
+
+ 
+starting train epoch 33
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0033 / 0050] [0009/280] eta: 0 Days 7:18:8         lr: 	2.0160E-05 loss: 	0.30854 loss align 0.0000
+ epoch [0033 / 0050] [0109/280] eta: 0 Days 7:8:33         lr: 	2.0160E-05 loss: 	0.32133 loss align 0.0000
+ epoch [0033 / 0050] [0209/280] eta: 0 Days 6:59:0         lr: 	2.0160E-05 loss: 	0.30787 loss align 0.0000
+starting val epoch 34
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0034 / 0050] validation loss: 	0.35617 	0.00000
+saving last checkpoint at epoch 34
+
+
+
+val  34  mean auc :0.812815 mean auprc 0.445637
+
+
+ 
+starting train epoch 34
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0034 / 0050] [0009/280] eta: 0 Days 6:52:16        lr: 	2.0160E-05 loss: 	0.32280 loss align 0.0000
+ epoch [0034 / 0050] [0109/280] eta: 0 Days 6:42:44        lr: 	2.0160E-05 loss: 	0.29951 loss align 0.0000
+ epoch [0034 / 0050] [0209/280] eta: 0 Days 6:33:12        lr: 	2.0160E-05 loss: 	0.29614 loss align 0.0000
+starting val epoch 35
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0035 / 0050] validation loss: 	0.34775 	0.00000
+saving last checkpoint at epoch 35
+
+
+
+val  35  mean auc :0.816327 mean auprc 0.438330
+
+
+ 
+starting train epoch 35
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0035 / 0050] [0009/280] eta: 0 Days 6:26:26        lr: 	2.0160E-05 loss: 	0.29273 loss align 0.0000
+ epoch [0035 / 0050] [0109/280] eta: 0 Days 6:16:55        lr: 	2.0160E-05 loss: 	0.30344 loss align 0.0000
+ epoch [0035 / 0050] [0209/280] eta: 0 Days 6:7:25         lr: 	2.0160E-05 loss: 	0.30279 loss align 0.0000
+starting val epoch 36
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0036 / 0050] validation loss: 	0.35195 	0.00000
+saving last checkpoint at epoch 36
+
+
+
+val  36  mean auc :0.813997 mean auprc 0.444569
+
+
+ 
+starting train epoch 36
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0036 / 0050] [0009/280] eta: 0 Days 6:0:36         lr: 	2.0160E-05 loss: 	0.31360 loss align 0.0000
+ epoch [0036 / 0050] [0109/280] eta: 0 Days 5:51:6         lr: 	2.0160E-05 loss: 	0.29427 loss align 0.0000
+ epoch [0036 / 0050] [0209/280] eta: 0 Days 5:41:37        lr: 	2.0160E-05 loss: 	0.29697 loss align 0.0000
+starting val epoch 37
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0037 / 0050] validation loss: 	0.35115 	0.00000
+saving last checkpoint at epoch 37
+
+
+
+val  37  mean auc :0.814470 mean auprc 0.432339
+
+
+ 
+starting train epoch 37
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0037 / 0050] [0009/280] eta: 0 Days 5:34:44        lr: 	2.0160E-05 loss: 	0.31008 loss align 0.0000
+ epoch [0037 / 0050] [0109/280] eta: 0 Days 5:25:17        lr: 	2.0160E-05 loss: 	0.28580 loss align 0.0000
+ epoch [0037 / 0050] [0209/280] eta: 0 Days 5:15:50        lr: 	2.0160E-05 loss: 	0.28823 loss align 0.0000
+starting val epoch 38
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+val [0038 / 0050] validation loss: 	0.34819 	0.00000
+saving last checkpoint at epoch 38
+
+
+
+val  38  mean auc :0.813828 mean auprc 0.440609
+
+
+ 
+starting train epoch 38
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 16 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+ epoch [0038 / 0050] [0009/280] eta: 0 Days 5:8:54         lr: 	2.0160E-05 loss: 	0.42871 loss align 0.0000
+ epoch [0038 / 0050] [0109/280] eta: 0 Days 4:59:28        lr: 	2.0160E-05 loss: 	0.29351 loss align 0.0000
+ epoch [0038 / 0050] [0209/280] eta: 0 Days 4:50:3         lr: 	2.0160E-05 loss: 	0.29900 loss align 0.0000
+Acute and unspecified renal failure                                                        & 0.825(0.871, 0.773) & 0.433 (0.560, 0.336) 
+
+
+
+val  38  best mean auc :0.825 mean auprc 0.433 
+
+
+                    CI AUROC (0.773, 0.871) CI AUPRC (0.336, 0.560) 
+
+
+                     AUROC accute 0.825 mixed 0.825 chronic 0.825
+
+
+                     AUROC accute CI (0.773, 0.871) mixed (0.773 , 0.871) chronic (0.773, 0.871)
+
+
+                     AUPRC accute  0.433 mixed 0.433 chronic 0.433 
+
+
+                     AUPRC accute CI  (0.336, 0.560) mixed (0.336,  0.560) chronic (0.336, 0.560) 
+
+
+                    

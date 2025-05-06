@@ -1,0 +1,782 @@
+A conda environment has been detected CONDA_PREFIX=
+/u/langzhou/.conda/envs/medfuse 
+anaconda3_cpu is loaded. Consider running conda deactivate and reloading it.
+cur args is:  Namespace(align=0.0, batch_size=16, beta_1=0.9, crop=224, cxr_data_dir='physionet.org/files/mimic-cxr-jpg/2.0.0', daft_activation='linear', data_pairs='partial_ehr', data_ratio=1.0, depth=1, dim=256, dropout=0.3, ehr_data_dir='mimic4extract/data', epochs=50, eval=False, fusion='joint', fusion_type='uni_ehr', imputation='previous', labels_set='mortality', layer_after=4, layers=2, load_state=None, load_state_cxr=None, load_state_ehr=None, lr=0.00053985, missing_token=None, mmtm_ratio=4, mode='train', network=None, normalizer_state=None, num_classes=1, patience=15, pretrained=False, rec_dropout=0.0, resize=256, resume=False, save_dir='checkpoints/mortality/uni_ehr_all', task='in-hospital-mortality', timestep=1.0, vision_backbone='resnet34', vision_num_classes=1)
+  layer_after                             : 4
+  layers                                  : 2
+  vision_num_classes                      : 1
+  resize                                  : 256
+  crop                                    : 224
+  vision_backbone                         : resnet34
+  pretrained                              : False
+  eval                                    : False
+  network                                 : None
+  fusion_type                             : uni_ehr
+  task                                    : in-hospital-mortality
+  labels_set                              : mortality
+  data_ratio                              : 1.0
+  mmtm_ratio                              : 4
+  daft_activation                         : linear
+  fusion                                  : joint
+  dim                                     : 256
+  depth                                   : 1
+  epochs                                  : 50
+  load_state                              : None
+  load_state_cxr                          : None
+  load_state_ehr                          : None
+  mode                                    : train
+  batch_size                              : 16
+  resume                                  : False
+  dropout                                 : 0.3
+  num_classes                             : 1
+  patience                                : 15
+  rec_dropout                             : 0.0
+  timestep                                : 1.0
+  imputation                              : previous
+  lr                                      : 0.00053985
+  align                                   : 0.0
+  data_pairs                              : partial_ehr
+  missing_token                           : None
+  beta_1                                  : 0.9
+  normalizer_state                        : None
+  ehr_data_dir                            : mimic4extract/data
+  cxr_data_dir                            : physionet.org/files/mimic-cxr-jpg/2.0.0
+  save_dir                                : checkpoints/mortality/uni_ehr_all
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/nn/modules/rnn.py:65: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  "num_layers={}".format(dropout, num_layers))
+/u/langzhou/.conda/envs/medfuse/lib/python3.6/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='mean' instead.
+  warnings.warn(warning.format(ret))
+LSTM(
+  (layer0): LSTM(76, 256, batch_first=True, dropout=0.3)
+  (layer1): LSTM(256, 256, batch_first=True, dropout=0.3)
+  (do): Dropout(p=0.3, inplace=False)
+  (dense_layer): Linear(in_features=256, out_features=1, bias=True)
+)
+Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.9)
+    eps: 1e-08
+    lr: 0.00053985
+    weight_decay: 0
+)
+BCELoss()
+==> training
+running for fusion_type uni_ehr
+starting val epoch 1
+val [0001 / 0050] validation loss: 	0.71387 	0.00000
+saving last checkpoint at epoch 1
+saving best checkpoint at epoch 1
+Acute and unspecified renal failure                                                        & 0.627(0.664, 0.587) & 0.195 (0.237, 0.160) 
+
+
+
+val  1   best mean auc :0.627 mean auprc 0.195 
+
+
+                    CI AUROC (0.587, 0.664) CI AUPRC (0.160, 0.237) 
+
+
+                     AUROC accute 0.627 mixed 0.627 chronic 0.627
+
+
+                     AUROC accute CI (0.587, 0.664) mixed (0.587 , 0.664) chronic (0.587, 0.664)
+
+
+                     AUPRC accute  0.195 mixed 0.195 chronic 0.195 
+
+
+                     AUPRC accute CI  (0.160, 0.237) mixed (0.160,  0.237) chronic (0.160, 0.237) 
+
+
+                    
+starting train epoch 1
+ epoch [0001 / 0050] [0009/1177] eta: 1 Days 8:41:1         lr: 	5.3985E-04 loss: 	0.50381 loss align 0.0000
+ epoch [0001 / 0050] [0109/1177] eta: 0 Days 4:54:28        lr: 	5.3985E-04 loss: 	0.34757 loss align 0.0000
+ epoch [0001 / 0050] [0209/1177] eta: 0 Days 3:35:39        lr: 	5.3985E-04 loss: 	0.32926 loss align 0.0000
+ epoch [0001 / 0050] [0309/1177] eta: 0 Days 3:9:20         lr: 	5.3985E-04 loss: 	0.32356 loss align 0.0000
+ epoch [0001 / 0050] [0409/1177] eta: 0 Days 2:55:23        lr: 	5.3985E-04 loss: 	0.31618 loss align 0.0000
+ epoch [0001 / 0050] [0509/1177] eta: 0 Days 2:46:41        lr: 	5.3985E-04 loss: 	0.31294 loss align 0.0000
+ epoch [0001 / 0050] [0609/1177] eta: 0 Days 2:39:54        lr: 	5.3985E-04 loss: 	0.30666 loss align 0.0000
+ epoch [0001 / 0050] [0709/1177] eta: 0 Days 2:34:5         lr: 	5.3985E-04 loss: 	0.30320 loss align 0.0000
+ epoch [0001 / 0050] [0809/1177] eta: 0 Days 2:29:58        lr: 	5.3985E-04 loss: 	0.29987 loss align 0.0000
+ epoch [0001 / 0050] [0909/1177] eta: 0 Days 2:27:27        lr: 	5.3985E-04 loss: 	0.29798 loss align 0.0000
+ epoch [0001 / 0050] [1009/1177] eta: 0 Days 2:25:13        lr: 	5.3985E-04 loss: 	0.29517 loss align 0.0000
+ epoch [0001 / 0050] [1109/1177] eta: 0 Days 2:22:59        lr: 	5.3985E-04 loss: 	0.29596 loss align 0.0000
+starting val epoch 2
+val [0002 / 0050] validation loss: 	0.29137 	0.00000
+saving last checkpoint at epoch 2
+saving best checkpoint at epoch 2
+Acute and unspecified renal failure                                                        & 0.842(0.867, 0.816) & 0.465 (0.533, 0.406) 
+
+
+
+val  2   best mean auc :0.842 mean auprc 0.465 
+
+
+                    CI AUROC (0.816, 0.867) CI AUPRC (0.406, 0.533) 
+
+
+                     AUROC accute 0.842 mixed 0.842 chronic 0.842
+
+
+                     AUROC accute CI (0.816, 0.867) mixed (0.816 , 0.867) chronic (0.816, 0.867)
+
+
+                     AUPRC accute  0.465 mixed 0.465 chronic 0.465 
+
+
+                     AUPRC accute CI  (0.406, 0.533) mixed (0.406,  0.533) chronic (0.406, 0.533) 
+
+
+                    
+starting train epoch 2
+ epoch [0002 / 0050] [0009/1177] eta: 0 Days 2:49:54        lr: 	5.3985E-04 loss: 	0.33595 loss align 0.0000
+ epoch [0002 / 0050] [0109/1177] eta: 0 Days 2:49:36        lr: 	5.3985E-04 loss: 	0.28193 loss align 0.0000
+ epoch [0002 / 0050] [0209/1177] eta: 0 Days 2:49:32        lr: 	5.3985E-04 loss: 	0.27524 loss align 0.0000
+ epoch [0002 / 0050] [0309/1177] eta: 0 Days 2:48:39        lr: 	5.3985E-04 loss: 	0.27492 loss align 0.0000
+ epoch [0002 / 0050] [0409/1177] eta: 0 Days 2:48:42        lr: 	5.3985E-04 loss: 	0.27519 loss align 0.0000
+ epoch [0002 / 0050] [0509/1177] eta: 0 Days 2:48:25        lr: 	5.3985E-04 loss: 	0.27501 loss align 0.0000
+ epoch [0002 / 0050] [0609/1177] eta: 0 Days 2:47:42        lr: 	5.3985E-04 loss: 	0.27628 loss align 0.0000
+ epoch [0002 / 0050] [0709/1177] eta: 0 Days 2:45:5         lr: 	5.3985E-04 loss: 	0.27430 loss align 0.0000
+ epoch [0002 / 0050] [0809/1177] eta: 0 Days 2:42:41        lr: 	5.3985E-04 loss: 	0.27922 loss align 0.0000
+ epoch [0002 / 0050] [0909/1177] eta: 0 Days 2:40:58        lr: 	5.3985E-04 loss: 	0.28013 loss align 0.0000
+ epoch [0002 / 0050] [1009/1177] eta: 0 Days 2:39:0         lr: 	5.3985E-04 loss: 	0.28106 loss align 0.0000
+ epoch [0002 / 0050] [1109/1177] eta: 0 Days 2:38:0         lr: 	5.3985E-04 loss: 	0.28127 loss align 0.0000
+starting val epoch 3
+val [0003 / 0050] validation loss: 	0.28700 	0.00000
+saving last checkpoint at epoch 3
+saving best checkpoint at epoch 3
+Acute and unspecified renal failure                                                        & 0.857(0.877, 0.834) & 0.483 (0.551, 0.421) 
+
+
+
+val  3   best mean auc :0.857 mean auprc 0.483 
+
+
+                    CI AUROC (0.834, 0.877) CI AUPRC (0.421, 0.551) 
+
+
+                     AUROC accute 0.857 mixed 0.857 chronic 0.857
+
+
+                     AUROC accute CI (0.834, 0.877) mixed (0.834 , 0.877) chronic (0.834, 0.877)
+
+
+                     AUPRC accute  0.483 mixed 0.483 chronic 0.483 
+
+
+                     AUPRC accute CI  (0.421, 0.551) mixed (0.421,  0.551) chronic (0.421, 0.551) 
+
+
+                    
+starting train epoch 3
+ epoch [0003 / 0050] [0009/1177] eta: 0 Days 2:48:57        lr: 	5.3985E-04 loss: 	0.33068 loss align 0.0000
+ epoch [0003 / 0050] [0109/1177] eta: 0 Days 2:47:1         lr: 	5.3985E-04 loss: 	0.27349 loss align 0.0000
+ epoch [0003 / 0050] [0209/1177] eta: 0 Days 2:45:16        lr: 	5.3985E-04 loss: 	0.27739 loss align 0.0000
+ epoch [0003 / 0050] [0309/1177] eta: 0 Days 2:43:21        lr: 	5.3985E-04 loss: 	0.28196 loss align 0.0000
+ epoch [0003 / 0050] [0409/1177] eta: 0 Days 2:41:53        lr: 	5.3985E-04 loss: 	0.28881 loss align 0.0000
+ epoch [0003 / 0050] [0509/1177] eta: 0 Days 2:40:24        lr: 	5.3985E-04 loss: 	0.28429 loss align 0.0000
+ epoch [0003 / 0050] [0609/1177] eta: 0 Days 2:39:11        lr: 	5.3985E-04 loss: 	0.28279 loss align 0.0000
+ epoch [0003 / 0050] [0709/1177] eta: 0 Days 2:38:0         lr: 	5.3985E-04 loss: 	0.28179 loss align 0.0000
+ epoch [0003 / 0050] [0809/1177] eta: 0 Days 2:37:3         lr: 	5.3985E-04 loss: 	0.27965 loss align 0.0000
+ epoch [0003 / 0050] [0909/1177] eta: 0 Days 2:35:58        lr: 	5.3985E-04 loss: 	0.27805 loss align 0.0000
+ epoch [0003 / 0050] [1009/1177] eta: 0 Days 2:34:57        lr: 	5.3985E-04 loss: 	0.28027 loss align 0.0000
+ epoch [0003 / 0050] [1109/1177] eta: 0 Days 2:34:4         lr: 	5.3985E-04 loss: 	0.28008 loss align 0.0000
+starting val epoch 4
+val [0004 / 0050] validation loss: 	0.26379 	0.00000
+saving last checkpoint at epoch 4
+saving best checkpoint at epoch 4
+Acute and unspecified renal failure                                                        & 0.859(0.881, 0.836) & 0.512 (0.578, 0.449) 
+
+
+
+val  4   best mean auc :0.859 mean auprc 0.512 
+
+
+                    CI AUROC (0.836, 0.881) CI AUPRC (0.449, 0.578) 
+
+
+                     AUROC accute 0.859 mixed 0.859 chronic 0.859
+
+
+                     AUROC accute CI (0.836, 0.881) mixed (0.836 , 0.881) chronic (0.836, 0.881)
+
+
+                     AUPRC accute  0.512 mixed 0.512 chronic 0.512 
+
+
+                     AUPRC accute CI  (0.449, 0.578) mixed (0.449,  0.578) chronic (0.449, 0.578) 
+
+
+                    
+starting train epoch 4
+ epoch [0004 / 0050] [0009/1177] eta: 0 Days 2:42:20        lr: 	5.3985E-04 loss: 	0.27543 loss align 0.0000
+ epoch [0004 / 0050] [0109/1177] eta: 0 Days 2:41:19        lr: 	5.3985E-04 loss: 	0.27408 loss align 0.0000
+ epoch [0004 / 0050] [0209/1177] eta: 0 Days 2:40:7         lr: 	5.3985E-04 loss: 	0.27522 loss align 0.0000
+ epoch [0004 / 0050] [0309/1177] eta: 0 Days 2:38:59        lr: 	5.3985E-04 loss: 	0.26547 loss align 0.0000
+ epoch [0004 / 0050] [0409/1177] eta: 0 Days 2:38:20        lr: 	5.3985E-04 loss: 	0.26663 loss align 0.0000
+ epoch [0004 / 0050] [0509/1177] eta: 0 Days 2:37:31        lr: 	5.3985E-04 loss: 	0.26646 loss align 0.0000
+ epoch [0004 / 0050] [0609/1177] eta: 0 Days 2:36:39        lr: 	5.3985E-04 loss: 	0.26527 loss align 0.0000
+ epoch [0004 / 0050] [0709/1177] eta: 0 Days 2:35:49        lr: 	5.3985E-04 loss: 	0.26629 loss align 0.0000
+ epoch [0004 / 0050] [0809/1177] eta: 0 Days 2:34:56        lr: 	5.3985E-04 loss: 	0.26566 loss align 0.0000
+ epoch [0004 / 0050] [0909/1177] eta: 0 Days 2:34:11        lr: 	5.3985E-04 loss: 	0.26656 loss align 0.0000
+ epoch [0004 / 0050] [1009/1177] eta: 0 Days 2:33:34        lr: 	5.3985E-04 loss: 	0.26924 loss align 0.0000
+ epoch [0004 / 0050] [1109/1177] eta: 0 Days 2:32:48        lr: 	5.3985E-04 loss: 	0.26901 loss align 0.0000
+starting val epoch 5
+val [0005 / 0050] validation loss: 	0.26741 	0.00000
+saving last checkpoint at epoch 5
+
+
+
+val  5   mean auc :0.858475 mean auprc 0.508337
+
+
+ 
+starting train epoch 5
+ epoch [0005 / 0050] [0009/1177] eta: 0 Days 2:39:21        lr: 	5.3985E-04 loss: 	0.30863 loss align 0.0000
+ epoch [0005 / 0050] [0109/1177] eta: 0 Days 2:38:21        lr: 	5.3985E-04 loss: 	0.27354 loss align 0.0000
+ epoch [0005 / 0050] [0209/1177] eta: 0 Days 2:37:22        lr: 	5.3985E-04 loss: 	0.28027 loss align 0.0000
+ epoch [0005 / 0050] [0309/1177] eta: 0 Days 2:36:27        lr: 	5.3985E-04 loss: 	0.26710 loss align 0.0000
+ epoch [0005 / 0050] [0409/1177] eta: 0 Days 2:35:35        lr: 	5.3985E-04 loss: 	0.27451 loss align 0.0000
+ epoch [0005 / 0050] [0509/1177] eta: 0 Days 2:34:49        lr: 	5.3985E-04 loss: 	0.27376 loss align 0.0000
+ epoch [0005 / 0050] [0609/1177] eta: 0 Days 2:34:11        lr: 	5.3985E-04 loss: 	0.27241 loss align 0.0000
+ epoch [0005 / 0050] [0709/1177] eta: 0 Days 2:33:20        lr: 	5.3985E-04 loss: 	0.27002 loss align 0.0000
+ epoch [0005 / 0050] [0809/1177] eta: 0 Days 2:32:40        lr: 	5.3985E-04 loss: 	0.27209 loss align 0.0000
+ epoch [0005 / 0050] [0909/1177] eta: 0 Days 2:31:59        lr: 	5.3985E-04 loss: 	0.26991 loss align 0.0000
+ epoch [0005 / 0050] [1009/1177] eta: 0 Days 2:31:12        lr: 	5.3985E-04 loss: 	0.26932 loss align 0.0000
+ epoch [0005 / 0050] [1109/1177] eta: 0 Days 2:30:26        lr: 	5.3985E-04 loss: 	0.27014 loss align 0.0000
+starting val epoch 6
+val [0006 / 0050] validation loss: 	0.29090 	0.00000
+saving last checkpoint at epoch 6
+
+
+
+val  6   mean auc :0.841767 mean auprc 0.498191
+
+
+ 
+starting train epoch 6
+ epoch [0006 / 0050] [0009/1177] eta: 0 Days 2:34:52        lr: 	5.3985E-04 loss: 	0.37137 loss align 0.0000
+ epoch [0006 / 0050] [0109/1177] eta: 0 Days 2:33:48        lr: 	5.3985E-04 loss: 	0.26537 loss align 0.0000
+ epoch [0006 / 0050] [0209/1177] eta: 0 Days 2:32:59        lr: 	5.3985E-04 loss: 	0.26440 loss align 0.0000
+ epoch [0006 / 0050] [0309/1177] eta: 0 Days 2:32:9         lr: 	5.3985E-04 loss: 	0.25495 loss align 0.0000
+ epoch [0006 / 0050] [0409/1177] eta: 0 Days 2:31:19        lr: 	5.3985E-04 loss: 	0.26086 loss align 0.0000
+ epoch [0006 / 0050] [0509/1177] eta: 0 Days 2:30:30        lr: 	5.3985E-04 loss: 	0.26224 loss align 0.0000
+ epoch [0006 / 0050] [0609/1177] eta: 0 Days 2:29:41        lr: 	5.3985E-04 loss: 	0.25729 loss align 0.0000
+ epoch [0006 / 0050] [0709/1177] eta: 0 Days 2:29:3         lr: 	5.3985E-04 loss: 	0.26041 loss align 0.0000
+ epoch [0006 / 0050] [0809/1177] eta: 0 Days 2:28:21        lr: 	5.3985E-04 loss: 	0.26126 loss align 0.0000
+ epoch [0006 / 0050] [0909/1177] eta: 0 Days 2:27:32        lr: 	5.3985E-04 loss: 	0.26241 loss align 0.0000
+ epoch [0006 / 0050] [1009/1177] eta: 0 Days 2:26:47        lr: 	5.3985E-04 loss: 	0.26127 loss align 0.0000
+ epoch [0006 / 0050] [1109/1177] eta: 0 Days 2:26:1         lr: 	5.3985E-04 loss: 	0.26463 loss align 0.0000
+starting val epoch 7
+val [0007 / 0050] validation loss: 	0.26529 	0.00000
+saving last checkpoint at epoch 7
+
+
+
+val  7   mean auc :0.856590 mean auprc 0.513501
+
+
+ 
+starting train epoch 7
+ epoch [0007 / 0050] [0009/1177] eta: 0 Days 2:29:2         lr: 	5.3985E-04 loss: 	0.28642 loss align 0.0000
+ epoch [0007 / 0050] [0109/1177] eta: 0 Days 2:28:17        lr: 	5.3985E-04 loss: 	0.26653 loss align 0.0000
+ epoch [0007 / 0050] [0209/1177] eta: 0 Days 2:27:30        lr: 	5.3985E-04 loss: 	0.25919 loss align 0.0000
+ epoch [0007 / 0050] [0309/1177] eta: 0 Days 2:26:50        lr: 	5.3985E-04 loss: 	0.26087 loss align 0.0000
+ epoch [0007 / 0050] [0409/1177] eta: 0 Days 2:26:17        lr: 	5.3985E-04 loss: 	0.26208 loss align 0.0000
+ epoch [0007 / 0050] [0509/1177] eta: 0 Days 2:25:32        lr: 	5.3985E-04 loss: 	0.25987 loss align 0.0000
+ epoch [0007 / 0050] [0609/1177] eta: 0 Days 2:25:1         lr: 	5.3985E-04 loss: 	0.26102 loss align 0.0000
+ epoch [0007 / 0050] [0709/1177] eta: 0 Days 2:24:20        lr: 	5.3985E-04 loss: 	0.26251 loss align 0.0000
+ epoch [0007 / 0050] [0809/1177] eta: 0 Days 2:23:48        lr: 	5.3985E-04 loss: 	0.26444 loss align 0.0000
+ epoch [0007 / 0050] [0909/1177] eta: 0 Days 2:23:9         lr: 	5.3985E-04 loss: 	0.26560 loss align 0.0000
+ epoch [0007 / 0050] [1009/1177] eta: 0 Days 2:22:24        lr: 	5.3985E-04 loss: 	0.26386 loss align 0.0000
+ epoch [0007 / 0050] [1109/1177] eta: 0 Days 2:21:44        lr: 	5.3985E-04 loss: 	0.26278 loss align 0.0000
+starting val epoch 8
+val [0008 / 0050] validation loss: 	0.29103 	0.00000
+saving last checkpoint at epoch 8
+saving best checkpoint at epoch 8
+Acute and unspecified renal failure                                                        & 0.860(0.882, 0.839) & 0.496 (0.556, 0.437) 
+
+
+
+val  8   best mean auc :0.860 mean auprc 0.496 
+
+
+                    CI AUROC (0.839, 0.882) CI AUPRC (0.437, 0.556) 
+
+
+                     AUROC accute 0.860 mixed 0.860 chronic 0.860
+
+
+                     AUROC accute CI (0.839, 0.882) mixed (0.839 , 0.882) chronic (0.839, 0.882)
+
+
+                     AUPRC accute  0.496 mixed 0.496 chronic 0.496 
+
+
+                     AUPRC accute CI  (0.437, 0.556) mixed (0.437,  0.556) chronic (0.437, 0.556) 
+
+
+                    
+starting train epoch 8
+ epoch [0008 / 0050] [0009/1177] eta: 0 Days 2:25:2         lr: 	5.3985E-04 loss: 	0.32735 loss align 0.0000
+ epoch [0008 / 0050] [0109/1177] eta: 0 Days 2:24:25        lr: 	5.3985E-04 loss: 	0.25757 loss align 0.0000
+ epoch [0008 / 0050] [0209/1177] eta: 0 Days 2:23:47        lr: 	5.3985E-04 loss: 	0.24890 loss align 0.0000
+ epoch [0008 / 0050] [0309/1177] eta: 0 Days 2:23:8         lr: 	5.3985E-04 loss: 	0.24709 loss align 0.0000
+ epoch [0008 / 0050] [0409/1177] eta: 0 Days 2:22:34        lr: 	5.3985E-04 loss: 	0.25267 loss align 0.0000
+ epoch [0008 / 0050] [0509/1177] eta: 0 Days 2:21:59        lr: 	5.3985E-04 loss: 	0.25322 loss align 0.0000
+ epoch [0008 / 0050] [0609/1177] eta: 0 Days 2:21:29        lr: 	5.3985E-04 loss: 	0.25051 loss align 0.0000
+ epoch [0008 / 0050] [0709/1177] eta: 0 Days 2:20:57        lr: 	5.3985E-04 loss: 	0.25637 loss align 0.0000
+ epoch [0008 / 0050] [0809/1177] eta: 0 Days 2:20:23        lr: 	5.3985E-04 loss: 	0.25865 loss align 0.0000
+ epoch [0008 / 0050] [0909/1177] eta: 0 Days 2:19:49        lr: 	5.3985E-04 loss: 	0.26199 loss align 0.0000
+ epoch [0008 / 0050] [1009/1177] eta: 0 Days 2:19:13        lr: 	5.3985E-04 loss: 	0.26207 loss align 0.0000
+ epoch [0008 / 0050] [1109/1177] eta: 0 Days 2:18:42        lr: 	5.3985E-04 loss: 	0.26195 loss align 0.0000
+starting val epoch 9
+val [0009 / 0050] validation loss: 	0.26581 	0.00000
+saving last checkpoint at epoch 9
+saving best checkpoint at epoch 9
+Acute and unspecified renal failure                                                        & 0.861(0.884, 0.837) & 0.522 (0.591, 0.457) 
+
+
+
+val  9   best mean auc :0.861 mean auprc 0.522 
+
+
+                    CI AUROC (0.837, 0.884) CI AUPRC (0.457, 0.591) 
+
+
+                     AUROC accute 0.861 mixed 0.861 chronic 0.861
+
+
+                     AUROC accute CI (0.837, 0.884) mixed (0.837 , 0.884) chronic (0.837, 0.884)
+
+
+                     AUPRC accute  0.522 mixed 0.522 chronic 0.522 
+
+
+                     AUPRC accute CI  (0.457, 0.591) mixed (0.457,  0.591) chronic (0.457, 0.591) 
+
+
+                    
+starting train epoch 9
+ epoch [0009 / 0050] [0009/1177] eta: 0 Days 2:21:30        lr: 	5.3985E-04 loss: 	0.30017 loss align 0.0000
+ epoch [0009 / 0050] [0109/1177] eta: 0 Days 2:20:57        lr: 	5.3985E-04 loss: 	0.27069 loss align 0.0000
+ epoch [0009 / 0050] [0209/1177] eta: 0 Days 2:20:28        lr: 	5.3985E-04 loss: 	0.26307 loss align 0.0000
+ epoch [0009 / 0050] [0309/1177] eta: 0 Days 2:19:59        lr: 	5.3985E-04 loss: 	0.26032 loss align 0.0000
+ epoch [0009 / 0050] [0409/1177] eta: 0 Days 2:19:27        lr: 	5.3985E-04 loss: 	0.25676 loss align 0.0000
+ epoch [0009 / 0050] [0509/1177] eta: 0 Days 2:18:56        lr: 	5.3985E-04 loss: 	0.25510 loss align 0.0000
+ epoch [0009 / 0050] [0609/1177] eta: 0 Days 2:18:29        lr: 	5.3985E-04 loss: 	0.25477 loss align 0.0000
+ epoch [0009 / 0050] [0709/1177] eta: 0 Days 2:18:2         lr: 	5.3985E-04 loss: 	0.25381 loss align 0.0000
+ epoch [0009 / 0050] [0809/1177] eta: 0 Days 2:17:32        lr: 	5.3985E-04 loss: 	0.25507 loss align 0.0000
+ epoch [0009 / 0050] [0909/1177] eta: 0 Days 2:17:7         lr: 	5.3985E-04 loss: 	0.25815 loss align 0.0000
+ epoch [0009 / 0050] [1009/1177] eta: 0 Days 2:16:38        lr: 	5.3985E-04 loss: 	0.25777 loss align 0.0000
+ epoch [0009 / 0050] [1109/1177] eta: 0 Days 2:16:6         lr: 	5.3985E-04 loss: 	0.25924 loss align 0.0000
+starting val epoch 10
+val [0010 / 0050] validation loss: 	0.26177 	0.00000
+saving last checkpoint at epoch 10
+saving best checkpoint at epoch 10
+Acute and unspecified renal failure                                                        & 0.868(0.890, 0.847) & 0.523 (0.587, 0.458) 
+
+
+
+val  10  best mean auc :0.868 mean auprc 0.523 
+
+
+                    CI AUROC (0.847, 0.890) CI AUPRC (0.458, 0.587) 
+
+
+                     AUROC accute 0.868 mixed 0.868 chronic 0.868
+
+
+                     AUROC accute CI (0.847, 0.890) mixed (0.847 , 0.890) chronic (0.847, 0.890)
+
+
+                     AUPRC accute  0.523 mixed 0.523 chronic 0.523 
+
+
+                     AUPRC accute CI  (0.458, 0.587) mixed (0.458,  0.587) chronic (0.458, 0.587) 
+
+
+                    
+starting train epoch 10
+ epoch [0010 / 0050] [0009/1177] eta: 0 Days 2:18:13        lr: 	5.3985E-04 loss: 	0.28698 loss align 0.0000
+ epoch [0010 / 0050] [0109/1177] eta: 0 Days 2:17:41        lr: 	5.3985E-04 loss: 	0.25656 loss align 0.0000
+ epoch [0010 / 0050] [0209/1177] eta: 0 Days 2:17:12        lr: 	5.3985E-04 loss: 	0.25026 loss align 0.0000
+ epoch [0010 / 0050] [0309/1177] eta: 0 Days 2:16:44        lr: 	5.3985E-04 loss: 	0.25165 loss align 0.0000
+ epoch [0010 / 0050] [0409/1177] eta: 0 Days 2:16:15        lr: 	5.3985E-04 loss: 	0.24968 loss align 0.0000
+ epoch [0010 / 0050] [0509/1177] eta: 0 Days 2:15:51        lr: 	5.3985E-04 loss: 	0.24852 loss align 0.0000
+ epoch [0010 / 0050] [0609/1177] eta: 0 Days 2:15:23        lr: 	5.3985E-04 loss: 	0.24937 loss align 0.0000
+ epoch [0010 / 0050] [0709/1177] eta: 0 Days 2:14:54        lr: 	5.3985E-04 loss: 	0.25363 loss align 0.0000
+ epoch [0010 / 0050] [0809/1177] eta: 0 Days 2:14:23        lr: 	5.3985E-04 loss: 	0.25326 loss align 0.0000
+ epoch [0010 / 0050] [0909/1177] eta: 0 Days 2:13:56        lr: 	5.3985E-04 loss: 	0.25278 loss align 0.0000
+ epoch [0010 / 0050] [1009/1177] eta: 0 Days 2:13:28        lr: 	5.3985E-04 loss: 	0.25155 loss align 0.0000
+ epoch [0010 / 0050] [1109/1177] eta: 0 Days 2:12:58        lr: 	5.3985E-04 loss: 	0.25163 loss align 0.0000
+starting val epoch 11
+val [0011 / 0050] validation loss: 	0.26614 	0.00000
+saving last checkpoint at epoch 11
+
+
+
+val  11  mean auc :0.858608 mean auprc 0.507229
+
+
+ 
+starting train epoch 11
+ epoch [0011 / 0050] [0009/1177] eta: 0 Days 2:14:42        lr: 	5.3985E-04 loss: 	0.25987 loss align 0.0000
+ epoch [0011 / 0050] [0109/1177] eta: 0 Days 2:14:14        lr: 	5.3985E-04 loss: 	0.26182 loss align 0.0000
+ epoch [0011 / 0050] [0209/1177] eta: 0 Days 2:13:48        lr: 	5.3985E-04 loss: 	0.26787 loss align 0.0000
+ epoch [0011 / 0050] [0309/1177] eta: 0 Days 2:13:18        lr: 	5.3985E-04 loss: 	0.26537 loss align 0.0000
+ epoch [0011 / 0050] [0409/1177] eta: 0 Days 2:12:50        lr: 	5.3985E-04 loss: 	0.26189 loss align 0.0000
+ epoch [0011 / 0050] [0509/1177] eta: 0 Days 2:12:23        lr: 	5.3985E-04 loss: 	0.26006 loss align 0.0000
+ epoch [0011 / 0050] [0609/1177] eta: 0 Days 2:11:58        lr: 	5.3985E-04 loss: 	0.25916 loss align 0.0000
+ epoch [0011 / 0050] [0709/1177] eta: 0 Days 2:11:29        lr: 	5.3985E-04 loss: 	0.25641 loss align 0.0000
+ epoch [0011 / 0050] [0809/1177] eta: 0 Days 2:11:3         lr: 	5.3985E-04 loss: 	0.25726 loss align 0.0000
+ epoch [0011 / 0050] [0909/1177] eta: 0 Days 2:10:36        lr: 	5.3985E-04 loss: 	0.25395 loss align 0.0000
+ epoch [0011 / 0050] [1009/1177] eta: 0 Days 2:10:8         lr: 	5.3985E-04 loss: 	0.25199 loss align 0.0000
+ epoch [0011 / 0050] [1109/1177] eta: 0 Days 2:9:37         lr: 	5.3985E-04 loss: 	0.25070 loss align 0.0000
+starting val epoch 12
+val [0012 / 0050] validation loss: 	0.26896 	0.00000
+saving last checkpoint at epoch 12
+
+
+
+val  12  mean auc :0.868394 mean auprc 0.518285
+
+
+ 
+starting train epoch 12
+ epoch [0012 / 0050] [0009/1177] eta: 0 Days 2:10:57        lr: 	5.3985E-04 loss: 	0.26374 loss align 0.0000
+ epoch [0012 / 0050] [0109/1177] eta: 0 Days 2:10:34        lr: 	5.3985E-04 loss: 	0.24870 loss align 0.0000
+ epoch [0012 / 0050] [0209/1177] eta: 0 Days 2:10:10        lr: 	5.3985E-04 loss: 	0.24583 loss align 0.0000
+ epoch [0012 / 0050] [0309/1177] eta: 0 Days 2:9:45         lr: 	5.3985E-04 loss: 	0.24322 loss align 0.0000
+ epoch [0012 / 0050] [0409/1177] eta: 0 Days 2:9:21         lr: 	5.3985E-04 loss: 	0.24336 loss align 0.0000
+ epoch [0012 / 0050] [0509/1177] eta: 0 Days 2:8:55         lr: 	5.3985E-04 loss: 	0.24164 loss align 0.0000
+ epoch [0012 / 0050] [0609/1177] eta: 0 Days 2:8:29         lr: 	5.3985E-04 loss: 	0.24116 loss align 0.0000
+ epoch [0012 / 0050] [0709/1177] eta: 0 Days 2:8:3          lr: 	5.3985E-04 loss: 	0.24404 loss align 0.0000
+ epoch [0012 / 0050] [0809/1177] eta: 0 Days 2:7:38         lr: 	5.3985E-04 loss: 	0.24542 loss align 0.0000
+ epoch [0012 / 0050] [0909/1177] eta: 0 Days 2:7:13         lr: 	5.3985E-04 loss: 	0.24628 loss align 0.0000
+ epoch [0012 / 0050] [1009/1177] eta: 0 Days 2:6:45         lr: 	5.3985E-04 loss: 	0.24652 loss align 0.0000
+ epoch [0012 / 0050] [1109/1177] eta: 0 Days 2:6:22         lr: 	5.3985E-04 loss: 	0.24682 loss align 0.0000
+starting val epoch 13
+val [0013 / 0050] validation loss: 	0.27237 	0.00000
+saving last checkpoint at epoch 13
+
+
+
+val  13  mean auc :0.861872 mean auprc 0.511995
+
+
+ 
+starting train epoch 13
+ epoch [0013 / 0050] [0009/1177] eta: 0 Days 2:7:48         lr: 	5.3985E-04 loss: 	0.20231 loss align 0.0000
+ epoch [0013 / 0050] [0109/1177] eta: 0 Days 2:7:23         lr: 	5.3985E-04 loss: 	0.23872 loss align 0.0000
+ epoch [0013 / 0050] [0209/1177] eta: 0 Days 2:6:58         lr: 	5.3985E-04 loss: 	0.23131 loss align 0.0000
+ epoch [0013 / 0050] [0309/1177] eta: 0 Days 2:6:32         lr: 	5.3985E-04 loss: 	0.24406 loss align 0.0000
+ epoch [0013 / 0050] [0409/1177] eta: 0 Days 2:6:7          lr: 	5.3985E-04 loss: 	0.24405 loss align 0.0000
+ epoch [0013 / 0050] [0509/1177] eta: 0 Days 2:5:42         lr: 	5.3985E-04 loss: 	0.24068 loss align 0.0000
+ epoch [0013 / 0050] [0609/1177] eta: 0 Days 2:5:19         lr: 	5.3985E-04 loss: 	0.23950 loss align 0.0000
+ epoch [0013 / 0050] [0709/1177] eta: 0 Days 2:4:54         lr: 	5.3985E-04 loss: 	0.23792 loss align 0.0000
+ epoch [0013 / 0050] [0809/1177] eta: 0 Days 2:4:28         lr: 	5.3985E-04 loss: 	0.23940 loss align 0.0000
+ epoch [0013 / 0050] [0909/1177] eta: 0 Days 2:4:4          lr: 	5.3985E-04 loss: 	0.23701 loss align 0.0000
+ epoch [0013 / 0050] [1009/1177] eta: 0 Days 2:3:39         lr: 	5.3985E-04 loss: 	0.23887 loss align 0.0000
+ epoch [0013 / 0050] [1109/1177] eta: 0 Days 2:3:13         lr: 	5.3985E-04 loss: 	0.24112 loss align 0.0000
+starting val epoch 14
+val [0014 / 0050] validation loss: 	0.27111 	0.00000
+saving last checkpoint at epoch 14
+
+
+
+val  14  mean auc :0.857877 mean auprc 0.505561
+
+
+ 
+starting train epoch 14
+ epoch [0014 / 0050] [0009/1177] eta: 0 Days 2:4:19         lr: 	5.3985E-04 loss: 	0.17993 loss align 0.0000
+ epoch [0014 / 0050] [0109/1177] eta: 0 Days 2:3:54         lr: 	5.3985E-04 loss: 	0.20984 loss align 0.0000
+ epoch [0014 / 0050] [0209/1177] eta: 0 Days 2:3:30         lr: 	5.3985E-04 loss: 	0.22719 loss align 0.0000
+ epoch [0014 / 0050] [0309/1177] eta: 0 Days 2:3:6          lr: 	5.3985E-04 loss: 	0.23120 loss align 0.0000
+ epoch [0014 / 0050] [0409/1177] eta: 0 Days 2:2:41         lr: 	5.3985E-04 loss: 	0.23475 loss align 0.0000
+ epoch [0014 / 0050] [0509/1177] eta: 0 Days 2:2:35         lr: 	5.3985E-04 loss: 	0.23331 loss align 0.0000
+ epoch [0014 / 0050] [0609/1177] eta: 0 Days 2:2:26         lr: 	5.3985E-04 loss: 	0.23309 loss align 0.0000
+ epoch [0014 / 0050] [0709/1177] eta: 0 Days 2:2:17         lr: 	5.3985E-04 loss: 	0.23539 loss align 0.0000
+ epoch [0014 / 0050] [0809/1177] eta: 0 Days 2:2:1          lr: 	5.3985E-04 loss: 	0.23572 loss align 0.0000
+ epoch [0014 / 0050] [0909/1177] eta: 0 Days 2:1:39         lr: 	5.3985E-04 loss: 	0.23498 loss align 0.0000
+ epoch [0014 / 0050] [1009/1177] eta: 0 Days 2:1:19         lr: 	5.3985E-04 loss: 	0.23688 loss align 0.0000
+ epoch [0014 / 0050] [1109/1177] eta: 0 Days 2:0:56         lr: 	5.3985E-04 loss: 	0.23718 loss align 0.0000
+starting val epoch 15
+val [0015 / 0050] validation loss: 	0.27669 	0.00000
+saving last checkpoint at epoch 15
+
+
+
+val  15  mean auc :0.856657 mean auprc 0.491115
+
+
+ 
+starting train epoch 15
+ epoch [0015 / 0050] [0009/1177] eta: 0 Days 2:1:58         lr: 	5.3985E-04 loss: 	0.23560 loss align 0.0000
+ epoch [0015 / 0050] [0109/1177] eta: 0 Days 2:1:28         lr: 	5.3985E-04 loss: 	0.21206 loss align 0.0000
+ epoch [0015 / 0050] [0209/1177] eta: 0 Days 2:1:0          lr: 	5.3985E-04 loss: 	0.21580 loss align 0.0000
+ epoch [0015 / 0050] [0309/1177] eta: 0 Days 2:0:32         lr: 	5.3985E-04 loss: 	0.22029 loss align 0.0000
+ epoch [0015 / 0050] [0409/1177] eta: 0 Days 2:0:6          lr: 	5.3985E-04 loss: 	0.22246 loss align 0.0000
+ epoch [0015 / 0050] [0509/1177] eta: 0 Days 1:59:38        lr: 	5.3985E-04 loss: 	0.22599 loss align 0.0000
+ epoch [0015 / 0050] [0609/1177] eta: 0 Days 1:59:10        lr: 	5.3985E-04 loss: 	0.22898 loss align 0.0000
+ epoch [0015 / 0050] [0709/1177] eta: 0 Days 1:58:43        lr: 	5.3985E-04 loss: 	0.23057 loss align 0.0000
+ epoch [0015 / 0050] [0809/1177] eta: 0 Days 1:58:16        lr: 	5.3985E-04 loss: 	0.23268 loss align 0.0000
+ epoch [0015 / 0050] [0909/1177] eta: 0 Days 1:57:47        lr: 	5.3985E-04 loss: 	0.23405 loss align 0.0000
+ epoch [0015 / 0050] [1009/1177] eta: 0 Days 1:57:20        lr: 	5.3985E-04 loss: 	0.23317 loss align 0.0000
+ epoch [0015 / 0050] [1109/1177] eta: 0 Days 1:56:53        lr: 	5.3985E-04 loss: 	0.23442 loss align 0.0000
+starting val epoch 16
+val [0016 / 0050] validation loss: 	0.26991 	0.00000
+saving last checkpoint at epoch 16
+
+
+
+val  16  mean auc :0.860926 mean auprc 0.514649
+
+
+ 
+starting train epoch 16
+ epoch [0016 / 0050] [0009/1177] eta: 0 Days 1:57:44        lr: 	5.3985E-04 loss: 	0.27278 loss align 0.0000
+ epoch [0016 / 0050] [0109/1177] eta: 0 Days 1:57:17        lr: 	5.3985E-04 loss: 	0.21081 loss align 0.0000
+ epoch [0016 / 0050] [0209/1177] eta: 0 Days 1:56:49        lr: 	5.3985E-04 loss: 	0.22452 loss align 0.0000
+ epoch [0016 / 0050] [0309/1177] eta: 0 Days 1:56:21        lr: 	5.3985E-04 loss: 	0.22159 loss align 0.0000
+ epoch [0016 / 0050] [0409/1177] eta: 0 Days 1:55:55        lr: 	5.3985E-04 loss: 	0.23196 loss align 0.0000
+ epoch [0016 / 0050] [0509/1177] eta: 0 Days 1:55:28        lr: 	5.3985E-04 loss: 	0.23150 loss align 0.0000
+ epoch [0016 / 0050] [0609/1177] eta: 0 Days 1:55:2         lr: 	5.3985E-04 loss: 	0.23217 loss align 0.0000
+ epoch [0016 / 0050] [0709/1177] eta: 0 Days 1:54:38        lr: 	5.3985E-04 loss: 	0.23363 loss align 0.0000
+ epoch [0016 / 0050] [0809/1177] eta: 0 Days 1:54:15        lr: 	5.3985E-04 loss: 	0.22999 loss align 0.0000
+ epoch [0016 / 0050] [0909/1177] eta: 0 Days 1:53:52        lr: 	5.3985E-04 loss: 	0.23114 loss align 0.0000
+ epoch [0016 / 0050] [1009/1177] eta: 0 Days 1:53:28        lr: 	5.3985E-04 loss: 	0.22821 loss align 0.0000
+ epoch [0016 / 0050] [1109/1177] eta: 0 Days 1:53:4         lr: 	5.3985E-04 loss: 	0.22795 loss align 0.0000
+starting val epoch 17
+val [0017 / 0050] validation loss: 	0.28958 	0.00000
+saving last checkpoint at epoch 17
+
+
+
+val  17  mean auc :0.860263 mean auprc 0.502351
+
+
+ 
+starting train epoch 17
+ epoch [0017 / 0050] [0009/1177] eta: 0 Days 1:53:56        lr: 	5.3985E-04 loss: 	0.20945 loss align 0.0000
+ epoch [0017 / 0050] [0109/1177] eta: 0 Days 1:53:32        lr: 	5.3985E-04 loss: 	0.19245 loss align 0.0000
+ epoch [0017 / 0050] [0209/1177] eta: 0 Days 1:53:6         lr: 	5.3985E-04 loss: 	0.21102 loss align 0.0000
+ epoch [0017 / 0050] [0309/1177] eta: 0 Days 1:52:42        lr: 	5.3985E-04 loss: 	0.22496 loss align 0.0000
+ epoch [0017 / 0050] [0409/1177] eta: 0 Days 1:52:17        lr: 	5.3985E-04 loss: 	0.21927 loss align 0.0000
+ epoch [0017 / 0050] [0509/1177] eta: 0 Days 1:51:52        lr: 	5.3985E-04 loss: 	0.21790 loss align 0.0000
+ epoch [0017 / 0050] [0609/1177] eta: 0 Days 1:51:27        lr: 	5.3985E-04 loss: 	0.21998 loss align 0.0000
+ epoch [0017 / 0050] [0709/1177] eta: 0 Days 1:51:4         lr: 	5.3985E-04 loss: 	0.21929 loss align 0.0000
+ epoch [0017 / 0050] [0809/1177] eta: 0 Days 1:50:39        lr: 	5.3985E-04 loss: 	0.21979 loss align 0.0000
+ epoch [0017 / 0050] [0909/1177] eta: 0 Days 1:50:15        lr: 	5.3985E-04 loss: 	0.22284 loss align 0.0000
+ epoch [0017 / 0050] [1009/1177] eta: 0 Days 1:49:51        lr: 	5.3985E-04 loss: 	0.22386 loss align 0.0000
+ epoch [0017 / 0050] [1109/1177] eta: 0 Days 1:49:26        lr: 	5.3985E-04 loss: 	0.22227 loss align 0.0000
+starting val epoch 18
+val [0018 / 0050] validation loss: 	0.28245 	0.00000
+saving last checkpoint at epoch 18
+
+
+
+val  18  mean auc :0.846999 mean auprc 0.502632
+
+
+ 
+starting train epoch 18
+ epoch [0018 / 0050] [0009/1177] eta: 0 Days 1:50:10        lr: 	5.3985E-04 loss: 	0.19543 loss align 0.0000
+ epoch [0018 / 0050] [0109/1177] eta: 0 Days 1:49:45        lr: 	5.3985E-04 loss: 	0.22976 loss align 0.0000
+ epoch [0018 / 0050] [0209/1177] eta: 0 Days 1:49:18        lr: 	5.3985E-04 loss: 	0.22752 loss align 0.0000
+ epoch [0018 / 0050] [0309/1177] eta: 0 Days 1:48:52        lr: 	5.3985E-04 loss: 	0.23166 loss align 0.0000
+ epoch [0018 / 0050] [0409/1177] eta: 0 Days 1:48:26        lr: 	5.3985E-04 loss: 	0.22269 loss align 0.0000
+ epoch [0018 / 0050] [0509/1177] eta: 0 Days 1:47:58        lr: 	5.3985E-04 loss: 	0.21897 loss align 0.0000
+ epoch [0018 / 0050] [0609/1177] eta: 0 Days 1:47:32        lr: 	5.3985E-04 loss: 	0.21811 loss align 0.0000
+ epoch [0018 / 0050] [0709/1177] eta: 0 Days 1:47:6         lr: 	5.3985E-04 loss: 	0.21890 loss align 0.0000
+ epoch [0018 / 0050] [0809/1177] eta: 0 Days 1:46:41        lr: 	5.3985E-04 loss: 	0.22135 loss align 0.0000
+ epoch [0018 / 0050] [0909/1177] eta: 0 Days 1:46:19        lr: 	5.3985E-04 loss: 	0.21999 loss align 0.0000
+ epoch [0018 / 0050] [1009/1177] eta: 0 Days 1:45:58        lr: 	5.3985E-04 loss: 	0.21931 loss align 0.0000
+ epoch [0018 / 0050] [1109/1177] eta: 0 Days 1:45:36        lr: 	5.3985E-04 loss: 	0.21788 loss align 0.0000
+starting val epoch 19
+val [0019 / 0050] validation loss: 	0.29996 	0.00000
+saving last checkpoint at epoch 19
+
+
+
+val  19  mean auc :0.854976 mean auprc 0.494907
+
+
+ 
+starting train epoch 19
+ epoch [0019 / 0050] [0009/1177] eta: 0 Days 1:46:17        lr: 	5.3985E-04 loss: 	0.16824 loss align 0.0000
+ epoch [0019 / 0050] [0109/1177] eta: 0 Days 1:45:55        lr: 	5.3985E-04 loss: 	0.21600 loss align 0.0000
+ epoch [0019 / 0050] [0209/1177] eta: 0 Days 1:45:35        lr: 	5.3985E-04 loss: 	0.20986 loss align 0.0000
+ epoch [0019 / 0050] [0309/1177] eta: 0 Days 1:45:12        lr: 	5.3985E-04 loss: 	0.21452 loss align 0.0000
+ epoch [0019 / 0050] [0409/1177] eta: 0 Days 1:44:50        lr: 	5.3985E-04 loss: 	0.21305 loss align 0.0000
+ epoch [0019 / 0050] [0509/1177] eta: 0 Days 1:44:27        lr: 	5.3985E-04 loss: 	0.21514 loss align 0.0000
+ epoch [0019 / 0050] [0609/1177] eta: 0 Days 1:44:7         lr: 	5.3985E-04 loss: 	0.21276 loss align 0.0000
+ epoch [0019 / 0050] [0709/1177] eta: 0 Days 1:43:47        lr: 	5.3985E-04 loss: 	0.21248 loss align 0.0000
+ epoch [0019 / 0050] [0809/1177] eta: 0 Days 1:43:27        lr: 	5.3985E-04 loss: 	0.20946 loss align 0.0000
+ epoch [0019 / 0050] [0909/1177] eta: 0 Days 1:43:5         lr: 	5.3985E-04 loss: 	0.20862 loss align 0.0000
+ epoch [0019 / 0050] [1009/1177] eta: 0 Days 1:42:43        lr: 	5.3985E-04 loss: 	0.20961 loss align 0.0000
+ epoch [0019 / 0050] [1109/1177] eta: 0 Days 1:42:22        lr: 	5.3985E-04 loss: 	0.20783 loss align 0.0000
+starting val epoch 20
+val [0020 / 0050] validation loss: 	0.29205 	0.00000
+saving last checkpoint at epoch 20
+
+
+
+val  20  mean auc :0.854765 mean auprc 0.504186
+
+
+ 
+starting train epoch 20
+ epoch [0020 / 0050] [0009/1177] eta: 0 Days 1:42:55        lr: 	5.3985E-04 loss: 	0.15392 loss align 0.0000
+ epoch [0020 / 0050] [0109/1177] eta: 0 Days 1:42:32        lr: 	5.3985E-04 loss: 	0.20288 loss align 0.0000
+ epoch [0020 / 0050] [0209/1177] eta: 0 Days 1:42:9         lr: 	5.3985E-04 loss: 	0.19632 loss align 0.0000
+ epoch [0020 / 0050] [0309/1177] eta: 0 Days 1:41:46        lr: 	5.3985E-04 loss: 	0.20100 loss align 0.0000
+ epoch [0020 / 0050] [0409/1177] eta: 0 Days 1:41:24        lr: 	5.3985E-04 loss: 	0.20859 loss align 0.0000
+ epoch [0020 / 0050] [0509/1177] eta: 0 Days 1:41:4         lr: 	5.3985E-04 loss: 	0.20220 loss align 0.0000
+ epoch [0020 / 0050] [0609/1177] eta: 0 Days 1:40:42        lr: 	5.3985E-04 loss: 	0.20291 loss align 0.0000
+ epoch [0020 / 0050] [0709/1177] eta: 0 Days 1:40:21        lr: 	5.3985E-04 loss: 	0.19983 loss align 0.0000
+ epoch [0020 / 0050] [0809/1177] eta: 0 Days 1:39:59        lr: 	5.3985E-04 loss: 	0.20265 loss align 0.0000
+ epoch [0020 / 0050] [0909/1177] eta: 0 Days 1:39:37        lr: 	5.3985E-04 loss: 	0.20069 loss align 0.0000
+ epoch [0020 / 0050] [1009/1177] eta: 0 Days 1:39:16        lr: 	5.3985E-04 loss: 	0.20123 loss align 0.0000
+ epoch [0020 / 0050] [1109/1177] eta: 0 Days 1:38:54        lr: 	5.3985E-04 loss: 	0.20210 loss align 0.0000
+starting val epoch 21
+val [0021 / 0050] validation loss: 	0.29926 	0.00000
+saving last checkpoint at epoch 21
+
+
+
+val  21  mean auc :0.858732 mean auprc 0.515028
+
+
+ 
+starting train epoch 21
+ epoch [0021 / 0050] [0009/1177] eta: 0 Days 1:39:25        lr: 	2.6993E-04 loss: 	0.23597 loss align 0.0000
+ epoch [0021 / 0050] [0109/1177] eta: 0 Days 1:39:3         lr: 	2.6993E-04 loss: 	0.18171 loss align 0.0000
+ epoch [0021 / 0050] [0209/1177] eta: 0 Days 1:38:41        lr: 	2.6993E-04 loss: 	0.17214 loss align 0.0000
+ epoch [0021 / 0050] [0309/1177] eta: 0 Days 1:38:20        lr: 	2.6993E-04 loss: 	0.17531 loss align 0.0000
+ epoch [0021 / 0050] [0409/1177] eta: 0 Days 1:37:58        lr: 	2.6993E-04 loss: 	0.17688 loss align 0.0000
+ epoch [0021 / 0050] [0509/1177] eta: 0 Days 1:37:37        lr: 	2.6993E-04 loss: 	0.18049 loss align 0.0000
+ epoch [0021 / 0050] [0609/1177] eta: 0 Days 1:37:17        lr: 	2.6993E-04 loss: 	0.17679 loss align 0.0000
+ epoch [0021 / 0050] [0709/1177] eta: 0 Days 1:36:57        lr: 	2.6993E-04 loss: 	0.17910 loss align 0.0000
+ epoch [0021 / 0050] [0809/1177] eta: 0 Days 1:36:36        lr: 	2.6993E-04 loss: 	0.17686 loss align 0.0000
+ epoch [0021 / 0050] [0909/1177] eta: 0 Days 1:36:15        lr: 	2.6993E-04 loss: 	0.17790 loss align 0.0000
+ epoch [0021 / 0050] [1009/1177] eta: 0 Days 1:35:53        lr: 	2.6993E-04 loss: 	0.17817 loss align 0.0000
+ epoch [0021 / 0050] [1109/1177] eta: 0 Days 1:35:30        lr: 	2.6993E-04 loss: 	0.17761 loss align 0.0000
+starting val epoch 22
+val [0022 / 0050] validation loss: 	0.34391 	0.00000
+saving last checkpoint at epoch 22
+
+
+
+val  22  mean auc :0.842072 mean auprc 0.477301
+
+
+ 
+starting train epoch 22
+ epoch [0022 / 0050] [0009/1177] eta: 0 Days 1:35:59        lr: 	2.6993E-04 loss: 	0.18186 loss align 0.0000
+ epoch [0022 / 0050] [0109/1177] eta: 0 Days 1:35:39        lr: 	2.6993E-04 loss: 	0.12714 loss align 0.0000
+ epoch [0022 / 0050] [0209/1177] eta: 0 Days 1:35:20        lr: 	2.6993E-04 loss: 	0.13683 loss align 0.0000
+ epoch [0022 / 0050] [0309/1177] eta: 0 Days 1:35:0         lr: 	2.6993E-04 loss: 	0.14798 loss align 0.0000
+ epoch [0022 / 0050] [0409/1177] eta: 0 Days 1:34:41        lr: 	2.6993E-04 loss: 	0.15325 loss align 0.0000
+ epoch [0022 / 0050] [0509/1177] eta: 0 Days 1:34:22        lr: 	2.6993E-04 loss: 	0.15580 loss align 0.0000
+ epoch [0022 / 0050] [0609/1177] eta: 0 Days 1:34:3         lr: 	2.6993E-04 loss: 	0.15608 loss align 0.0000
+ epoch [0022 / 0050] [0709/1177] eta: 0 Days 1:33:44        lr: 	2.6993E-04 loss: 	0.15814 loss align 0.0000
+ epoch [0022 / 0050] [0809/1177] eta: 0 Days 1:33:24        lr: 	2.6993E-04 loss: 	0.15665 loss align 0.0000
+ epoch [0022 / 0050] [0909/1177] eta: 0 Days 1:33:5         lr: 	2.6993E-04 loss: 	0.15906 loss align 0.0000
+ epoch [0022 / 0050] [1009/1177] eta: 0 Days 1:32:45        lr: 	2.6993E-04 loss: 	0.16053 loss align 0.0000
+ epoch [0022 / 0050] [1109/1177] eta: 0 Days 1:32:23        lr: 	2.6993E-04 loss: 	0.16134 loss align 0.0000
+starting val epoch 23
+val [0023 / 0050] validation loss: 	0.36899 	0.00000
+saving last checkpoint at epoch 23
+
+
+
+val  23  mean auc :0.829219 mean auprc 0.446624
+
+
+ 
+starting train epoch 23
+ epoch [0023 / 0050] [0009/1177] eta: 0 Days 1:32:45        lr: 	2.6993E-04 loss: 	0.15847 loss align 0.0000
+ epoch [0023 / 0050] [0109/1177] eta: 0 Days 1:32:25        lr: 	2.6993E-04 loss: 	0.13197 loss align 0.0000
+ epoch [0023 / 0050] [0209/1177] eta: 0 Days 1:32:5         lr: 	2.6993E-04 loss: 	0.14247 loss align 0.0000
+ epoch [0023 / 0050] [0309/1177] eta: 0 Days 1:31:44        lr: 	2.6993E-04 loss: 	0.14566 loss align 0.0000
+ epoch [0023 / 0050] [0409/1177] eta: 0 Days 1:31:24        lr: 	2.6993E-04 loss: 	0.14747 loss align 0.0000
+ epoch [0023 / 0050] [0509/1177] eta: 0 Days 1:31:3         lr: 	2.6993E-04 loss: 	0.14622 loss align 0.0000
+ epoch [0023 / 0050] [0609/1177] eta: 0 Days 1:30:44        lr: 	2.6993E-04 loss: 	0.14720 loss align 0.0000
+ epoch [0023 / 0050] [0709/1177] eta: 0 Days 1:30:23        lr: 	2.6993E-04 loss: 	0.14525 loss align 0.0000
+ epoch [0023 / 0050] [0809/1177] eta: 0 Days 1:30:2         lr: 	2.6993E-04 loss: 	0.14585 loss align 0.0000
+ epoch [0023 / 0050] [0909/1177] eta: 0 Days 1:29:42        lr: 	2.6993E-04 loss: 	0.14785 loss align 0.0000
+ epoch [0023 / 0050] [1009/1177] eta: 0 Days 1:29:23        lr: 	2.6993E-04 loss: 	0.15034 loss align 0.0000
+ epoch [0023 / 0050] [1109/1177] eta: 0 Days 1:29:1         lr: 	2.6993E-04 loss: 	0.15030 loss align 0.0000
+starting val epoch 24
+val [0024 / 0050] validation loss: 	0.40534 	0.00000
+saving last checkpoint at epoch 24
+
+
+
+val  24  mean auc :0.810324 mean auprc 0.427152
+
+
+ 
+starting train epoch 24
+ epoch [0024 / 0050] [0009/1177] eta: 0 Days 1:29:20        lr: 	2.6993E-04 loss: 	0.12938 loss align 0.0000
+ epoch [0024 / 0050] [0109/1177] eta: 0 Days 1:28:57        lr: 	2.6993E-04 loss: 	0.14665 loss align 0.0000
+ epoch [0024 / 0050] [0209/1177] eta: 0 Days 1:28:35        lr: 	2.6993E-04 loss: 	0.13926 loss align 0.0000
+ epoch [0024 / 0050] [0309/1177] eta: 0 Days 1:28:12        lr: 	2.6993E-04 loss: 	0.13952 loss align 0.0000
+ epoch [0024 / 0050] [0409/1177] eta: 0 Days 1:27:49        lr: 	2.6993E-04 loss: 	0.13497 loss align 0.0000
+ epoch [0024 / 0050] [0509/1177] eta: 0 Days 1:27:25        lr: 	2.6993E-04 loss: 	0.13555 loss align 0.0000
+ epoch [0024 / 0050] [0609/1177] eta: 0 Days 1:27:0         lr: 	2.6993E-04 loss: 	0.13686 loss align 0.0000
+ epoch [0024 / 0050] [0709/1177] eta: 0 Days 1:26:37        lr: 	2.6993E-04 loss: 	0.13900 loss align 0.0000
+ epoch [0024 / 0050] [0809/1177] eta: 0 Days 1:26:13        lr: 	2.6993E-04 loss: 	0.13776 loss align 0.0000
+ epoch [0024 / 0050] [0909/1177] eta: 0 Days 1:25:49        lr: 	2.6993E-04 loss: 	0.13741 loss align 0.0000
+ epoch [0024 / 0050] [1009/1177] eta: 0 Days 1:25:26        lr: 	2.6993E-04 loss: 	0.13716 loss align 0.0000
+ epoch [0024 / 0050] [1109/1177] eta: 0 Days 1:25:3         lr: 	2.6993E-04 loss: 	0.13922 loss align 0.0000
+starting val epoch 25
+val [0025 / 0050] validation loss: 	0.43597 	0.00000
+saving last checkpoint at epoch 25
+
+
+
+val  25  mean auc :0.801697 mean auprc 0.410968
+
+
+ 
+starting train epoch 25
+ epoch [0025 / 0050] [0009/1177] eta: 0 Days 1:25:19        lr: 	2.6993E-04 loss: 	0.12367 loss align 0.0000
+ epoch [0025 / 0050] [0109/1177] eta: 0 Days 1:24:58        lr: 	2.6993E-04 loss: 	0.11052 loss align 0.0000
+ epoch [0025 / 0050] [0209/1177] eta: 0 Days 1:24:37        lr: 	2.6993E-04 loss: 	0.11432 loss align 0.0000
+ epoch [0025 / 0050] [0309/1177] eta: 0 Days 1:24:16        lr: 	2.6993E-04 loss: 	0.11911 loss align 0.0000
+ epoch [0025 / 0050] [0409/1177] eta: 0 Days 1:23:54        lr: 	2.6993E-04 loss: 	0.12657 loss align 0.0000
+ epoch [0025 / 0050] [0509/1177] eta: 0 Days 1:23:32        lr: 	2.6993E-04 loss: 	0.12921 loss align 0.0000
+ epoch [0025 / 0050] [0609/1177] eta: 0 Days 1:23:11        lr: 	2.6993E-04 loss: 	0.12792 loss align 0.0000
+ epoch [0025 / 0050] [0709/1177] eta: 0 Days 1:22:49        lr: 	2.6993E-04 loss: 	0.12920 loss align 0.0000
+ epoch [0025 / 0050] [0809/1177] eta: 0 Days 1:22:27        lr: 	2.6993E-04 loss: 	0.12988 loss align 0.0000
+ epoch [0025 / 0050] [0909/1177] eta: 0 Days 1:22:5         lr: 	2.6993E-04 loss: 	0.13028 loss align 0.0000
+ epoch [0025 / 0050] [1009/1177] eta: 0 Days 1:21:43        lr: 	2.6993E-04 loss: 	0.13016 loss align 0.0000
+ epoch [0025 / 0050] [1109/1177] eta: 0 Days 1:21:22        lr: 	2.6993E-04 loss: 	0.13117 loss align 0.0000
+Acute and unspecified renal failure                                                        & 0.868(0.890, 0.847) & 0.523 (0.587, 0.458) 
+
+
+
+val  25  best mean auc :0.868 mean auprc 0.523 
+
+
+                    CI AUROC (0.847, 0.890) CI AUPRC (0.458, 0.587) 
+
+
+                     AUROC accute 0.868 mixed 0.868 chronic 0.868
+
+
+                     AUROC accute CI (0.847, 0.890) mixed (0.847 , 0.890) chronic (0.847, 0.890)
+
+
+                     AUPRC accute  0.523 mixed 0.523 chronic 0.523 
+
+
+                     AUPRC accute CI  (0.458, 0.587) mixed (0.458,  0.587) chronic (0.458, 0.587) 
+
+
+                    

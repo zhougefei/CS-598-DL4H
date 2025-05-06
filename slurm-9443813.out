@@ -1,0 +1,39 @@
+A conda environment has been detected CONDA_PREFIX=
+/sw/external/python/anaconda3_cpu 
+anaconda3_cpu is loaded. Consider running conda deactivate and reloading it.
+[cn062.delta.ncsa.illinois.edu:2220843] mca: base: components_register: registering framework ras components
+[cn062.delta.ncsa.illinois.edu:2220843] mca: base: components_register: found loaded component gridengine
+[cn062.delta.ncsa.illinois.edu:2220843] mca: base: components_register: component gridengine register function successful
+[cn062.delta.ncsa.illinois.edu:2220843] mca: base: components_register: found loaded component simulator
+[cn062.delta.ncsa.illinois.edu:2220843] mca: base: components_register: component simulator register function successful
+[cn062.delta.ncsa.illinois.edu:2220843] mca: base: components_register: found loaded component slurm
+[cn062.delta.ncsa.illinois.edu:2220843] mca: base: components_register: component slurm register function successful
+[cn062.delta.ncsa.illinois.edu:2220843] mca: base: components_open: opening ras components
+[cn062.delta.ncsa.illinois.edu:2220843] mca: base: components_open: found loaded component gridengine
+[cn062.delta.ncsa.illinois.edu:2220843] mca: base: components_open: component gridengine open function successful
+[cn062.delta.ncsa.illinois.edu:2220843] mca: base: components_open: found loaded component simulator
+[cn062.delta.ncsa.illinois.edu:2220843] mca: base: components_open: found loaded component slurm
+[cn062.delta.ncsa.illinois.edu:2220843] mca: base: components_open: component slurm open function successful
+[cn062.delta.ncsa.illinois.edu:2220843] mca:base:select: Auto-selecting ras components
+[cn062.delta.ncsa.illinois.edu:2220843] mca:base:select:(  ras) Querying component [gridengine]
+[cn062.delta.ncsa.illinois.edu:2220843] mca:base:select:(  ras) Querying component [simulator]
+[cn062.delta.ncsa.illinois.edu:2220843] mca:base:select:(  ras) Querying component [slurm]
+[cn062.delta.ncsa.illinois.edu:2220843] mca:base:select:(  ras) Query of component [slurm] set priority to 50
+[cn062.delta.ncsa.illinois.edu:2220843] mca:base:select:(  ras) Selected component [slurm]
+[cn062.delta.ncsa.illinois.edu:2220843] mca: base: close: component gridengine closed
+[cn062.delta.ncsa.illinois.edu:2220843] mca: base: close: unloading component gridengine
+[cn062.delta.ncsa.illinois.edu:2220843] mca: base: close: unloading component simulator
+
+======================   ALLOCATED NODES   ======================
+	cn062: flags=0x11 slots=20 max_slots=0 slots_inuse=0 state=UP
+=================================================================
+before update train       368960
+test          5159
+validate      2991
+Name: split, dtype: int64
+after update train       325200
+test         36628
+validate     15282
+Name: split, dtype: int64
+[cn062.delta.ncsa.illinois.edu:2220843] mca: base: close: component slurm closed
+[cn062.delta.ncsa.illinois.edu:2220843] mca: base: close: unloading component slurm
