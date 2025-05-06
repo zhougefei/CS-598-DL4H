@@ -1,0 +1,328 @@
+Acute and unspecified renal failure                                                        & 0.541(0.561, 0.523) & 0.302 (0.326, 0.284) Acute cerebrovascular disease                                                              & 0.524(0.562, 0.488) & 0.054 (0.065, 0.046) Acute myocardial infarction                                                                & 0.446(0.475, 0.416) & 0.071 (0.085, 0.061) Cardiac dysrhythmias                                                                       & 0.537(0.555, 0.520) & 0.339 (0.361, 0.319) Chronic kidney disease                                                                     & 0.492(0.511, 0.471) & 0.210 (0.227, 0.194) Chronic obstructive pulmonary disease and bronchiectasis                                   & 0.521(0.544, 0.497) & 0.155 (0.174, 0.142) Complications of surgical procedures or medical care                                       & 0.432(0.452, 0.412) & 0.173 (0.190, 0.160) Conduction disorders                                                                       & 0.461(0.489, 0.436) & 0.097 (0.110, 0.087) Congestive heart failure; nonhypertensive                                                  & 0.521(0.540, 0.502) & 0.274 (0.294, 0.256) Coronary atherosclerosis and other heart disease                                           & 0.456(0.473, 0.439) & 0.292 (0.312, 0.278) Diabetes mellitus with complications                                                       & 0.543(0.569, 0.517) & 0.139 (0.156, 0.125) Diabetes mellitus without complication                                                     & 0.525(0.545, 0.503) & 0.188 (0.208, 0.171) Disorders of lipid metabolism                                                              & 0.510(0.526, 0.494) & 0.418 (0.437, 0.399) Essential hypertension                                                                     & 0.470(0.486, 0.454) & 0.393 (0.414, 0.376) Fluid and electrolyte disorders                                                            & 0.570(0.586, 0.552) & 0.439 (0.462, 0.417) Gastrointestinal hemorrhage                                                                & 0.493(0.523, 0.462) & 0.068 (0.083, 0.059) Hypertension with complications and secondary hypertension                                 & 0.480(0.498, 0.461) & 0.212 (0.230, 0.197) Other liver diseases                                                                       & 0.541(0.565, 0.517) & 0.150 (0.172, 0.134) Other lower respiratory disease                                                            & 0.519(0.548, 0.491) & 0.106 (0.122, 0.093) Other upper respiratory disease                                                            & 0.614(0.648, 0.583) & 0.078 (0.095, 0.067) Pleurisy; pneumothorax; pulmonary collapse                                                 & 0.585(0.616, 0.550) & 0.090 (0.108, 0.077) Pneumonia (except that caused by tuberculosis or sexually transmitted disease)             & 0.369(0.393, 0.344) & 0.096 (0.109, 0.088) Respiratory failure; insufficiency; arrest (adult)                                         & 0.498(0.520, 0.475) & 0.174 (0.193, 0.159) Septicemia (except in labor)                                                               & 0.506(0.532, 0.483) & 0.180 (0.203, 0.162) Shock                                                                                      & 0.405(0.433, 0.379) & 0.102 (0.114, 0.093) 
+
+
+val  1   best mean auc :0.502 mean auprc 0.192 
+
+
+                    CI AUROC (0.479, 0.526) CI AUPRC (0.178, 0.210) 
+
+
+                     AUROC accute 0.500 mixed 0.521 chronic 0.493
+
+
+                     AUROC accute CI (0.474, 0.527) mixed (0.498 , 0.544) chronic (0.474, 0.512)
+
+
+                     AUPRC accute  0.149 mixed 0.200 chronic 0.267 
+
+
+                     AUPRC accute CI  (0.136, 0.166) mixed (0.184,  0.219) chronic (0.251, 0.286) 
+
+
+                    Acute and unspecified renal failure                                                        & 0.762(0.777, 0.747) & 0.524 (0.554, 0.493) Acute cerebrovascular disease                                                              & 0.861(0.886, 0.834) & 0.312 (0.377, 0.260) Acute myocardial infarction                                                                & 0.704(0.730, 0.681) & 0.140 (0.164, 0.123) Cardiac dysrhythmias                                                                       & 0.629(0.644, 0.613) & 0.397 (0.419, 0.375) Chronic kidney disease                                                                     & 0.690(0.708, 0.671) & 0.361 (0.393, 0.333) Chronic obstructive pulmonary disease and bronchiectasis                                   & 0.669(0.689, 0.649) & 0.237 (0.260, 0.215) Complications of surgical procedures or medical care                                       & 0.659(0.678, 0.641) & 0.312 (0.341, 0.289) Conduction disorders                                                                       & 0.651(0.674, 0.627) & 0.190 (0.219, 0.166) Congestive heart failure; nonhypertensive                                                  & 0.717(0.733, 0.702) & 0.449 (0.480, 0.424) Coronary atherosclerosis and other heart disease                                           & 0.720(0.735, 0.704) & 0.533 (0.559, 0.506) Diabetes mellitus with complications                                                       & 0.863(0.878, 0.847) & 0.545 (0.588, 0.506) Diabetes mellitus without complication                                                     & 0.708(0.727, 0.690) & 0.300 (0.330, 0.276) Disorders of lipid metabolism                                                              & 0.663(0.679, 0.647) & 0.573 (0.598, 0.550) Essential hypertension                                                                     & 0.602(0.616, 0.585) & 0.511 (0.535, 0.489) Fluid and electrolyte disorders                                                            & 0.717(0.731, 0.703) & 0.586 (0.609, 0.561) Gastrointestinal hemorrhage                                                                & 0.653(0.680, 0.626) & 0.100 (0.118, 0.085) Hypertension with complications and secondary hypertension                                 & 0.687(0.705, 0.670) & 0.368 (0.397, 0.343) Other liver diseases                                                                       & 0.658(0.679, 0.636) & 0.216 (0.247, 0.190) Other lower respiratory disease                                                            & 0.617(0.643, 0.591) & 0.142 (0.162, 0.125) Other upper respiratory disease                                                            & 0.707(0.740, 0.671) & 0.149 (0.185, 0.120) Pleurisy; pneumothorax; pulmonary collapse                                                 & 0.697(0.725, 0.670) & 0.149 (0.183, 0.126) Pneumonia (except that caused by tuberculosis or sexually transmitted disease)             & 0.777(0.795, 0.758) & 0.301 (0.337, 0.271) Respiratory failure; insufficiency; arrest (adult)                                         & 0.820(0.834, 0.804) & 0.473 (0.510, 0.436) Septicemia (except in labor)                                                               & 0.790(0.805, 0.773) & 0.396 (0.432, 0.359) Shock                                                                                      & 0.828(0.845, 0.812) & 0.460 (0.506, 0.423) 
+
+
+val  2   best mean auc :0.714 mean auprc 0.349 
+
+
+                    CI AUROC (0.694, 0.733) CI AUPRC (0.322, 0.380) 
+
+
+                     AUROC accute 0.738 mixed 0.704 chronic 0.677
+
+
+                     AUROC accute CI (0.716, 0.759) mixed (0.685 , 0.722) chronic (0.659, 0.694)
+
+
+                     AUPRC accute  0.311 mixed 0.360 chronic 0.412 
+
+
+                     AUPRC accute CI  (0.282, 0.344) mixed (0.332,  0.391) chronic (0.388, 0.439) 
+
+
+                    Acute and unspecified renal failure                                                        & 0.778(0.792, 0.763) & 0.545 (0.574, 0.517) Acute cerebrovascular disease                                                              & 0.872(0.896, 0.847) & 0.362 (0.432, 0.306) Acute myocardial infarction                                                                & 0.719(0.743, 0.696) & 0.165 (0.198, 0.142) Cardiac dysrhythmias                                                                       & 0.638(0.654, 0.621) & 0.417 (0.443, 0.393) Chronic kidney disease                                                                     & 0.709(0.727, 0.690) & 0.383 (0.417, 0.354) Chronic obstructive pulmonary disease and bronchiectasis                                   & 0.669(0.689, 0.646) & 0.243 (0.271, 0.221) Complications of surgical procedures or medical care                                       & 0.673(0.694, 0.655) & 0.342 (0.372, 0.315) Conduction disorders                                                                       & 0.678(0.703, 0.655) & 0.202 (0.233, 0.177) Congestive heart failure; nonhypertensive                                                  & 0.738(0.751, 0.722) & 0.476 (0.505, 0.444) Coronary atherosclerosis and other heart disease                                           & 0.738(0.752, 0.723) & 0.551 (0.578, 0.527) Diabetes mellitus with complications                                                       & 0.872(0.885, 0.858) & 0.554 (0.594, 0.513) Diabetes mellitus without complication                                                     & 0.742(0.759, 0.724) & 0.337 (0.368, 0.312) Disorders of lipid metabolism                                                              & 0.675(0.690, 0.660) & 0.582 (0.606, 0.559) Essential hypertension                                                                     & 0.625(0.640, 0.609) & 0.527 (0.548, 0.503) Fluid and electrolyte disorders                                                            & 0.732(0.746, 0.718) & 0.613 (0.637, 0.588) Gastrointestinal hemorrhage                                                                & 0.675(0.701, 0.652) & 0.107 (0.129, 0.093) Hypertension with complications and secondary hypertension                                 & 0.706(0.723, 0.687) & 0.392 (0.423, 0.364) Other liver diseases                                                                       & 0.686(0.707, 0.664) & 0.242 (0.273, 0.215) Other lower respiratory disease                                                            & 0.633(0.662, 0.607) & 0.149 (0.172, 0.131) Other upper respiratory disease                                                            & 0.730(0.762, 0.697) & 0.179 (0.224, 0.145) Pleurisy; pneumothorax; pulmonary collapse                                                 & 0.710(0.738, 0.683) & 0.153 (0.186, 0.126) Pneumonia (except that caused by tuberculosis or sexually transmitted disease)             & 0.788(0.806, 0.770) & 0.323 (0.360, 0.293) Respiratory failure; insufficiency; arrest (adult)                                         & 0.834(0.850, 0.819) & 0.500 (0.538, 0.465) Septicemia (except in labor)                                                               & 0.815(0.829, 0.800) & 0.448 (0.488, 0.412) Shock                                                                                      & 0.863(0.878, 0.849) & 0.528 (0.572, 0.486) 
+
+
+val  3   best mean auc :0.732 mean auprc 0.373 
+
+
+                    CI AUROC (0.713, 0.751) CI AUPRC (0.344, 0.406) 
+
+
+                     AUROC accute 0.756 mixed 0.722 chronic 0.695
+
+
+                     AUROC accute CI (0.735, 0.777) mixed (0.704 , 0.740) chronic (0.677, 0.712)
+
+
+                     AUPRC accute  0.340 mixed 0.378 chronic 0.431 
+
+
+                     AUPRC accute CI  (0.309, 0.376) mixed (0.349,  0.410) chronic (0.406, 0.459) 
+
+
+                    Acute and unspecified renal failure                                                        & 0.786(0.799, 0.771) & 0.550 (0.583, 0.520) Acute cerebrovascular disease                                                              & 0.883(0.906, 0.859) & 0.351 (0.417, 0.298) Acute myocardial infarction                                                                & 0.730(0.754, 0.705) & 0.186 (0.223, 0.154) Cardiac dysrhythmias                                                                       & 0.643(0.661, 0.629) & 0.422 (0.447, 0.397) Chronic kidney disease                                                                     & 0.721(0.738, 0.703) & 0.403 (0.437, 0.374) Chronic obstructive pulmonary disease and bronchiectasis                                   & 0.684(0.705, 0.663) & 0.262 (0.292, 0.239) Complications of surgical procedures or medical care                                       & 0.682(0.700, 0.662) & 0.359 (0.392, 0.328) Conduction disorders                                                                       & 0.676(0.701, 0.650) & 0.212 (0.243, 0.184) Congestive heart failure; nonhypertensive                                                  & 0.740(0.756, 0.725) & 0.485 (0.516, 0.458) Coronary atherosclerosis and other heart disease                                           & 0.740(0.755, 0.726) & 0.563 (0.591, 0.536) Diabetes mellitus with complications                                                       & 0.887(0.900, 0.875) & 0.578 (0.623, 0.537) Diabetes mellitus without complication                                                     & 0.749(0.765, 0.732) & 0.335 (0.362, 0.308) Disorders of lipid metabolism                                                              & 0.672(0.688, 0.657) & 0.584 (0.609, 0.561) Essential hypertension                                                                     & 0.626(0.643, 0.608) & 0.534 (0.558, 0.512) Fluid and electrolyte disorders                                                            & 0.743(0.758, 0.729) & 0.626 (0.651, 0.604) Gastrointestinal hemorrhage                                                                & 0.690(0.717, 0.665) & 0.119 (0.143, 0.100) Hypertension with complications and secondary hypertension                                 & 0.721(0.736, 0.704) & 0.415 (0.445, 0.386) Other liver diseases                                                                       & 0.698(0.718, 0.677) & 0.250 (0.286, 0.222) Other lower respiratory disease                                                            & 0.643(0.669, 0.617) & 0.155 (0.179, 0.136) Other upper respiratory disease                                                            & 0.734(0.768, 0.702) & 0.207 (0.256, 0.169) Pleurisy; pneumothorax; pulmonary collapse                                                 & 0.710(0.738, 0.682) & 0.155 (0.192, 0.130) Pneumonia (except that caused by tuberculosis or sexually transmitted disease)             & 0.789(0.807, 0.772) & 0.330 (0.370, 0.298) Respiratory failure; insufficiency; arrest (adult)                                         & 0.840(0.855, 0.826) & 0.506 (0.544, 0.472) Septicemia (except in labor)                                                               & 0.837(0.851, 0.823) & 0.474 (0.513, 0.439) Shock                                                                                      & 0.878(0.893, 0.864) & 0.557 (0.602, 0.518) 
+
+
+val  4   best mean auc :0.740 mean auprc 0.385 
+
+
+                    CI AUROC (0.721, 0.759) CI AUPRC (0.355, 0.419) 
+
+
+                     AUROC accute 0.765 mixed 0.729 chronic 0.702
+
+
+                     AUROC accute CI (0.744, 0.786) mixed (0.711 , 0.747) chronic (0.685, 0.719)
+
+
+                     AUPRC accute  0.352 mixed 0.389 chronic 0.442 
+
+
+                     AUPRC accute CI  (0.320, 0.390) mixed (0.360,  0.423) chronic (0.416, 0.471) 
+
+
+                    Acute and unspecified renal failure                                                        & 0.790(0.805, 0.776) & 0.564 (0.594, 0.536) Acute cerebrovascular disease                                                              & 0.889(0.912, 0.866) & 0.403 (0.471, 0.337) Acute myocardial infarction                                                                & 0.732(0.754, 0.708) & 0.172 (0.202, 0.147) Cardiac dysrhythmias                                                                       & 0.650(0.664, 0.632) & 0.432 (0.459, 0.408) Chronic kidney disease                                                                     & 0.719(0.737, 0.702) & 0.400 (0.431, 0.371) Chronic obstructive pulmonary disease and bronchiectasis                                   & 0.696(0.715, 0.672) & 0.276 (0.307, 0.249) Complications of surgical procedures or medical care                                       & 0.690(0.709, 0.670) & 0.373 (0.408, 0.342) Conduction disorders                                                                       & 0.684(0.708, 0.658) & 0.211 (0.245, 0.184) Congestive heart failure; nonhypertensive                                                  & 0.747(0.761, 0.733) & 0.489 (0.518, 0.464) Coronary atherosclerosis and other heart disease                                           & 0.743(0.758, 0.727) & 0.568 (0.595, 0.542) Diabetes mellitus with complications                                                       & 0.890(0.904, 0.876) & 0.588 (0.627, 0.545) Diabetes mellitus without complication                                                     & 0.760(0.775, 0.744) & 0.347 (0.379, 0.321) Disorders of lipid metabolism                                                              & 0.676(0.691, 0.661) & 0.585 (0.608, 0.562) Essential hypertension                                                                     & 0.631(0.648, 0.616) & 0.534 (0.558, 0.511) Fluid and electrolyte disorders                                                            & 0.745(0.759, 0.731) & 0.626 (0.651, 0.603) Gastrointestinal hemorrhage                                                                & 0.703(0.728, 0.678) & 0.123 (0.145, 0.105) Hypertension with complications and secondary hypertension                                 & 0.718(0.735, 0.701) & 0.411 (0.442, 0.383) Other liver diseases                                                                       & 0.704(0.725, 0.683) & 0.250 (0.286, 0.223) Other lower respiratory disease                                                            & 0.645(0.670, 0.617) & 0.164 (0.190, 0.141) Other upper respiratory disease                                                            & 0.741(0.774, 0.707) & 0.263 (0.316, 0.216) Pleurisy; pneumothorax; pulmonary collapse                                                 & 0.721(0.747, 0.694) & 0.158 (0.192, 0.131) Pneumonia (except that caused by tuberculosis or sexually transmitted disease)             & 0.800(0.818, 0.783) & 0.351 (0.393, 0.316) Respiratory failure; insufficiency; arrest (adult)                                         & 0.851(0.864, 0.838) & 0.537 (0.575, 0.500) Septicemia (except in labor)                                                               & 0.840(0.854, 0.826) & 0.491 (0.530, 0.453) Shock                                                                                      & 0.884(0.897, 0.871) & 0.561 (0.607, 0.523) 
+
+
+val  5   best mean auc :0.746 mean auprc 0.395 
+
+
+                    CI AUROC (0.727, 0.764) CI AUPRC (0.365, 0.429) 
+
+
+                     AUROC accute 0.772 mixed 0.735 chronic 0.706
+
+
+                     AUROC accute CI (0.751, 0.792) mixed (0.716 , 0.752) chronic (0.689, 0.723)
+
+
+                     AUPRC accute  0.368 mixed 0.394 chronic 0.446 
+
+
+                     AUPRC accute CI  (0.335, 0.406) mixed (0.365,  0.427) chronic (0.420, 0.474) 
+
+
+                    Acute and unspecified renal failure                                                        & 0.792(0.806, 0.778) & 0.565 (0.595, 0.537) Acute cerebrovascular disease                                                              & 0.892(0.915, 0.868) & 0.416 (0.482, 0.356) Acute myocardial infarction                                                                & 0.751(0.773, 0.725) & 0.198 (0.236, 0.169) Cardiac dysrhythmias                                                                       & 0.658(0.675, 0.641) & 0.434 (0.460, 0.409) Chronic kidney disease                                                                     & 0.728(0.746, 0.712) & 0.428 (0.462, 0.399) Chronic obstructive pulmonary disease and bronchiectasis                                   & 0.708(0.728, 0.686) & 0.291 (0.322, 0.264) Complications of surgical procedures or medical care                                       & 0.693(0.711, 0.675) & 0.368 (0.400, 0.338) Conduction disorders                                                                       & 0.699(0.723, 0.675) & 0.226 (0.262, 0.198) Congestive heart failure; nonhypertensive                                                  & 0.753(0.768, 0.738) & 0.505 (0.535, 0.476) Coronary atherosclerosis and other heart disease                                           & 0.745(0.759, 0.730) & 0.568 (0.593, 0.542) Diabetes mellitus with complications                                                       & 0.893(0.906, 0.879) & 0.600 (0.642, 0.559) Diabetes mellitus without complication                                                     & 0.768(0.784, 0.750) & 0.371 (0.407, 0.342) Disorders of lipid metabolism                                                              & 0.680(0.696, 0.665) & 0.587 (0.613, 0.564) Essential hypertension                                                                     & 0.641(0.656, 0.626) & 0.547 (0.573, 0.524) Fluid and electrolyte disorders                                                            & 0.749(0.762, 0.737) & 0.632 (0.655, 0.610) Gastrointestinal hemorrhage                                                                & 0.720(0.746, 0.696) & 0.129 (0.156, 0.113) Hypertension with complications and secondary hypertension                                 & 0.730(0.747, 0.713) & 0.438 (0.470, 0.407) Other liver diseases                                                                       & 0.704(0.724, 0.684) & 0.256 (0.293, 0.227) Other lower respiratory disease                                                            & 0.645(0.670, 0.617) & 0.160 (0.183, 0.140) Other upper respiratory disease                                                            & 0.736(0.769, 0.700) & 0.241 (0.299, 0.197) Pleurisy; pneumothorax; pulmonary collapse                                                 & 0.721(0.747, 0.695) & 0.153 (0.186, 0.129) Pneumonia (except that caused by tuberculosis or sexually transmitted disease)             & 0.803(0.820, 0.787) & 0.366 (0.405, 0.331) Respiratory failure; insufficiency; arrest (adult)                                         & 0.853(0.868, 0.840) & 0.534 (0.572, 0.498) Septicemia (except in labor)                                                               & 0.846(0.860, 0.832) & 0.498 (0.538, 0.464) Shock                                                                                      & 0.888(0.900, 0.875) & 0.572 (0.621, 0.531) 
+
+
+val  6   best mean auc :0.752 mean auprc 0.403 
+
+
+                    CI AUROC (0.733, 0.770) CI AUPRC (0.373, 0.438) 
+
+
+                     AUROC accute 0.776 mixed 0.741 chronic 0.714
+
+
+                     AUROC accute CI (0.756, 0.796) mixed (0.724 , 0.759) chronic (0.697, 0.731)
+
+
+                     AUPRC accute  0.372 mixed 0.404 chronic 0.462 
+
+
+                     AUPRC accute CI  (0.339, 0.410) mixed (0.374,  0.438) chronic (0.435, 0.491) 
+
+
+                    Acute and unspecified renal failure                                                        & 0.793(0.806, 0.778) & 0.566 (0.597, 0.535) Acute cerebrovascular disease                                                              & 0.894(0.917, 0.870) & 0.405 (0.481, 0.345) Acute myocardial infarction                                                                & 0.754(0.778, 0.730) & 0.211 (0.250, 0.178) Cardiac dysrhythmias                                                                       & 0.655(0.669, 0.639) & 0.433 (0.457, 0.410) Chronic kidney disease                                                                     & 0.729(0.746, 0.710) & 0.430 (0.463, 0.398) Chronic obstructive pulmonary disease and bronchiectasis                                   & 0.709(0.730, 0.689) & 0.296 (0.331, 0.270) Complications of surgical procedures or medical care                                       & 0.702(0.720, 0.684) & 0.390 (0.421, 0.360) Conduction disorders                                                                       & 0.700(0.724, 0.676) & 0.231 (0.266, 0.201) Congestive heart failure; nonhypertensive                                                  & 0.759(0.774, 0.743) & 0.522 (0.552, 0.494) Coronary atherosclerosis and other heart disease                                           & 0.749(0.764, 0.735) & 0.575 (0.604, 0.552) Diabetes mellitus with complications                                                       & 0.885(0.900, 0.872) & 0.585 (0.631, 0.541) Diabetes mellitus without complication                                                     & 0.766(0.782, 0.750) & 0.380 (0.412, 0.351) Disorders of lipid metabolism                                                              & 0.689(0.704, 0.673) & 0.598 (0.621, 0.576) Essential hypertension                                                                     & 0.643(0.659, 0.627) & 0.550 (0.575, 0.527) Fluid and electrolyte disorders                                                            & 0.751(0.765, 0.737) & 0.630 (0.654, 0.606) Gastrointestinal hemorrhage                                                                & 0.719(0.744, 0.695) & 0.128 (0.152, 0.110) Hypertension with complications and secondary hypertension                                 & 0.735(0.753, 0.718) & 0.444 (0.476, 0.415) Other liver diseases                                                                       & 0.715(0.734, 0.694) & 0.261 (0.293, 0.229) Other lower respiratory disease                                                            & 0.644(0.669, 0.616) & 0.164 (0.192, 0.144) Other upper respiratory disease                                                            & 0.735(0.771, 0.702) & 0.270 (0.327, 0.222) Pleurisy; pneumothorax; pulmonary collapse                                                 & 0.726(0.753, 0.698) & 0.160 (0.199, 0.134) Pneumonia (except that caused by tuberculosis or sexually transmitted disease)             & 0.805(0.822, 0.786) & 0.368 (0.410, 0.328) Respiratory failure; insufficiency; arrest (adult)                                         & 0.856(0.870, 0.843) & 0.539 (0.578, 0.503) Septicemia (except in labor)                                                               & 0.849(0.863, 0.835) & 0.508 (0.546, 0.470) Shock                                                                                      & 0.889(0.902, 0.875) & 0.585 (0.628, 0.543) 
+
+
+val  7   best mean auc :0.754 mean auprc 0.409 
+
+
+                    CI AUROC (0.735, 0.773) CI AUPRC (0.378, 0.445) 
+
+
+                     AUROC accute 0.778 mixed 0.743 chronic 0.717
+
+
+                     AUROC accute CI (0.758, 0.798) mixed (0.725 , 0.760) chronic (0.701, 0.734)
+
+
+                     AUPRC accute  0.379 mixed 0.406 chronic 0.468 
+
+
+                     AUPRC accute CI  (0.344, 0.418) mixed (0.375,  0.440) chronic (0.441, 0.497) 
+
+
+                    Acute and unspecified renal failure                                                        & 0.795(0.810, 0.781) & 0.578 (0.608, 0.549) Acute cerebrovascular disease                                                              & 0.896(0.916, 0.873) & 0.422 (0.495, 0.358) Acute myocardial infarction                                                                & 0.756(0.781, 0.732) & 0.207 (0.251, 0.176) Cardiac dysrhythmias                                                                       & 0.653(0.669, 0.638) & 0.431 (0.459, 0.408) Chronic kidney disease                                                                     & 0.731(0.748, 0.714) & 0.440 (0.474, 0.409) Chronic obstructive pulmonary disease and bronchiectasis                                   & 0.713(0.733, 0.691) & 0.301 (0.335, 0.272) Complications of surgical procedures or medical care                                       & 0.706(0.724, 0.686) & 0.396 (0.430, 0.367) Conduction disorders                                                                       & 0.704(0.727, 0.680) & 0.239 (0.275, 0.206) Congestive heart failure; nonhypertensive                                                  & 0.759(0.774, 0.743) & 0.521 (0.551, 0.493) Coronary atherosclerosis and other heart disease                                           & 0.753(0.766, 0.737) & 0.580 (0.608, 0.554) Diabetes mellitus with complications                                                       & 0.896(0.908, 0.882) & 0.607 (0.649, 0.564) Diabetes mellitus without complication                                                     & 0.777(0.793, 0.760) & 0.381 (0.414, 0.348) Disorders of lipid metabolism                                                              & 0.690(0.703, 0.675) & 0.599 (0.622, 0.576) Essential hypertension                                                                     & 0.652(0.667, 0.637) & 0.555 (0.580, 0.534) Fluid and electrolyte disorders                                                            & 0.754(0.767, 0.740) & 0.635 (0.659, 0.612) Gastrointestinal hemorrhage                                                                & 0.723(0.747, 0.700) & 0.137 (0.162, 0.117) Hypertension with complications and secondary hypertension                                 & 0.736(0.752, 0.718) & 0.452 (0.484, 0.420) Other liver diseases                                                                       & 0.717(0.738, 0.696) & 0.271 (0.307, 0.240) Other lower respiratory disease                                                            & 0.643(0.670, 0.616) & 0.160 (0.186, 0.140) Other upper respiratory disease                                                            & 0.753(0.787, 0.720) & 0.263 (0.328, 0.214) Pleurisy; pneumothorax; pulmonary collapse                                                 & 0.726(0.752, 0.701) & 0.167 (0.207, 0.139) Pneumonia (except that caused by tuberculosis or sexually transmitted disease)             & 0.807(0.824, 0.790) & 0.370 (0.414, 0.336) Respiratory failure; insufficiency; arrest (adult)                                         & 0.859(0.872, 0.846) & 0.547 (0.586, 0.510) Septicemia (except in labor)                                                               & 0.851(0.866, 0.836) & 0.510 (0.553, 0.474) Shock                                                                                      & 0.889(0.902, 0.876) & 0.571 (0.613, 0.530) 
+
+
+val  8   best mean auc :0.758 mean auprc 0.414 
+
+
+                    CI AUROC (0.739, 0.776) CI AUPRC (0.382, 0.450) 
+
+
+                     AUROC accute 0.781 mixed 0.746 chronic 0.722
+
+
+                     AUROC accute CI (0.761, 0.801) mixed (0.728 , 0.763) chronic (0.704, 0.737)
+
+
+                     AUPRC accute  0.382 mixed 0.414 chronic 0.473 
+
+
+                     AUPRC accute CI  (0.348, 0.422) mixed (0.382,  0.448) chronic (0.445, 0.502) 
+
+
+                    
+
+
+val  9   mean auc :0.756794 mean auprc 0.413635
+
+
+ Acute and unspecified renal failure                                                        & 0.799(0.813, 0.785) & 0.579 (0.609, 0.549) Acute cerebrovascular disease                                                              & 0.893(0.915, 0.870) & 0.420 (0.493, 0.357) Acute myocardial infarction                                                                & 0.757(0.782, 0.732) & 0.226 (0.275, 0.193) Cardiac dysrhythmias                                                                       & 0.661(0.677, 0.644) & 0.439 (0.464, 0.413) Chronic kidney disease                                                                     & 0.737(0.754, 0.720) & 0.443 (0.478, 0.412) Chronic obstructive pulmonary disease and bronchiectasis                                   & 0.720(0.741, 0.700) & 0.310 (0.342, 0.280) Complications of surgical procedures or medical care                                       & 0.708(0.726, 0.690) & 0.394 (0.426, 0.362) Conduction disorders                                                                       & 0.710(0.734, 0.688) & 0.250 (0.286, 0.219) Congestive heart failure; nonhypertensive                                                  & 0.763(0.777, 0.747) & 0.541 (0.571, 0.513) Coronary atherosclerosis and other heart disease                                           & 0.752(0.767, 0.738) & 0.580 (0.608, 0.555) Diabetes mellitus with complications                                                       & 0.899(0.912, 0.886) & 0.615 (0.654, 0.576) Diabetes mellitus without complication                                                     & 0.780(0.796, 0.764) & 0.388 (0.424, 0.359) Disorders of lipid metabolism                                                              & 0.695(0.710, 0.679) & 0.607 (0.631, 0.583) Essential hypertension                                                                     & 0.650(0.665, 0.635) & 0.555 (0.579, 0.531) Fluid and electrolyte disorders                                                            & 0.757(0.771, 0.743) & 0.641 (0.665, 0.617) Gastrointestinal hemorrhage                                                                & 0.731(0.755, 0.707) & 0.145 (0.172, 0.121) Hypertension with complications and secondary hypertension                                 & 0.742(0.759, 0.726) & 0.458 (0.490, 0.427) Other liver diseases                                                                       & 0.720(0.741, 0.699) & 0.274 (0.309, 0.246) Other lower respiratory disease                                                            & 0.641(0.669, 0.613) & 0.162 (0.188, 0.141) Other upper respiratory disease                                                            & 0.748(0.781, 0.711) & 0.282 (0.345, 0.230) Pleurisy; pneumothorax; pulmonary collapse                                                 & 0.720(0.745, 0.694) & 0.172 (0.213, 0.142) Pneumonia (except that caused by tuberculosis or sexually transmitted disease)             & 0.805(0.822, 0.786) & 0.378 (0.420, 0.338) Respiratory failure; insufficiency; arrest (adult)                                         & 0.858(0.871, 0.845) & 0.550 (0.587, 0.514) Septicemia (except in labor)                                                               & 0.851(0.865, 0.837) & 0.519 (0.558, 0.480) Shock                                                                                      & 0.890(0.903, 0.879) & 0.588 (0.631, 0.548) 
+
+
+val  10  best mean auc :0.760 mean auprc 0.421 
+
+
+                    CI AUROC (0.741, 0.778) CI AUPRC (0.388, 0.457) 
+
+
+                     AUROC accute 0.782 mixed 0.751 chronic 0.725
+
+
+                     AUROC accute CI (0.761, 0.801) mixed (0.733 , 0.768) chronic (0.709, 0.742)
+
+
+                     AUPRC accute  0.389 mixed 0.424 chronic 0.477 
+
+
+                     AUPRC accute CI  (0.353, 0.429) mixed (0.394,  0.457) chronic (0.450, 0.508) 
+
+
+                    Acute and unspecified renal failure                                                        & 0.798(0.812, 0.784) & 0.576 (0.605, 0.547) Acute cerebrovascular disease                                                              & 0.899(0.921, 0.875) & 0.439 (0.515, 0.371) Acute myocardial infarction                                                                & 0.752(0.777, 0.727) & 0.205 (0.248, 0.173) Cardiac dysrhythmias                                                                       & 0.669(0.684, 0.654) & 0.448 (0.474, 0.423) Chronic kidney disease                                                                     & 0.736(0.754, 0.718) & 0.441 (0.475, 0.412) Chronic obstructive pulmonary disease and bronchiectasis                                   & 0.725(0.743, 0.703) & 0.325 (0.357, 0.292) Complications of surgical procedures or medical care                                       & 0.713(0.732, 0.695) & 0.397 (0.430, 0.367) Conduction disorders                                                                       & 0.705(0.728, 0.681) & 0.240 (0.277, 0.211) Congestive heart failure; nonhypertensive                                                  & 0.766(0.780, 0.751) & 0.534 (0.563, 0.504) Coronary atherosclerosis and other heart disease                                           & 0.754(0.767, 0.740) & 0.583 (0.611, 0.556) Diabetes mellitus with complications                                                       & 0.892(0.905, 0.878) & 0.604 (0.644, 0.565) Diabetes mellitus without complication                                                     & 0.779(0.794, 0.764) & 0.384 (0.413, 0.357) Disorders of lipid metabolism                                                              & 0.692(0.706, 0.678) & 0.601 (0.624, 0.579) Essential hypertension                                                                     & 0.647(0.663, 0.631) & 0.552 (0.578, 0.530) Fluid and electrolyte disorders                                                            & 0.758(0.771, 0.744) & 0.642 (0.667, 0.617) Gastrointestinal hemorrhage                                                                & 0.727(0.749, 0.705) & 0.138 (0.167, 0.117) Hypertension with complications and secondary hypertension                                 & 0.740(0.756, 0.724) & 0.449 (0.482, 0.418) Other liver diseases                                                                       & 0.716(0.736, 0.693) & 0.268 (0.303, 0.238) Other lower respiratory disease                                                            & 0.636(0.661, 0.609) & 0.151 (0.173, 0.135) Other upper respiratory disease                                                            & 0.750(0.782, 0.717) & 0.288 (0.351, 0.229) Pleurisy; pneumothorax; pulmonary collapse                                                 & 0.727(0.752, 0.700) & 0.169 (0.207, 0.141) Pneumonia (except that caused by tuberculosis or sexually transmitted disease)             & 0.808(0.825, 0.790) & 0.378 (0.417, 0.339) Respiratory failure; insufficiency; arrest (adult)                                         & 0.859(0.872, 0.846) & 0.553 (0.593, 0.517) Septicemia (except in labor)                                                               & 0.858(0.870, 0.844) & 0.526 (0.566, 0.488) Shock                                                                                      & 0.896(0.908, 0.882) & 0.595 (0.637, 0.553) 
+
+
+val  11  best mean auc :0.760 mean auprc 0.419 
+
+
+                    CI AUROC (0.741, 0.778) CI AUPRC (0.387, 0.455) 
+
+
+                     AUROC accute 0.783 mixed 0.750 chronic 0.725
+
+
+                     AUROC accute CI (0.763, 0.802) mixed (0.731 , 0.767) chronic (0.708, 0.741)
+
+
+                     AUPRC accute  0.389 mixed 0.418 chronic 0.476 
+
+
+                     AUPRC accute CI  (0.353, 0.429) mixed (0.388,  0.452) chronic (0.449, 0.506) 
+
+
+                    
+
+
+val  12  mean auc :0.759939 mean auprc 0.421449
+
+
+ 
+
+
+val  13  mean auc :0.759508 mean auprc 0.422497
+
+
+ 
+
+
+val  14  mean auc :0.758387 mean auprc 0.417928
+
+
+ 
+
+
+val  15  mean auc :0.758063 mean auprc 0.423614
+
+
+ 
+
+
+val  16  mean auc :0.756442 mean auprc 0.419324
+
+
+ 
+
+
+val  17  mean auc :0.758623 mean auprc 0.420626
+
+
+ 
+
+
+val  18  mean auc :0.754868 mean auprc 0.415522
+
+
+ 
+
+
+val  19  mean auc :0.757366 mean auprc 0.417305
+
+
+ 
+
+
+val  20  mean auc :0.754788 mean auprc 0.410314
+
+
+ 
+
+
+val  21  mean auc :0.754421 mean auprc 0.411798
+
+
+ 
+
+
+val  22  mean auc :0.750887 mean auprc 0.411320
+
+
+ 
+
+
+val  23  mean auc :0.747234 mean auprc 0.408030
+
+
+ 
+
+
+val  24  mean auc :0.746040 mean auprc 0.405841
+
+
+ 
+
+
+val  25  mean auc :0.742543 mean auprc 0.402439
+
+
+ 
+
+
+val  26  mean auc :0.742487 mean auprc 0.401391
+
+
+ Acute and unspecified renal failure                                                        & 0.798(0.812, 0.784) & 0.576 (0.605, 0.547) Acute cerebrovascular disease                                                              & 0.899(0.921, 0.875) & 0.439 (0.515, 0.371) Acute myocardial infarction                                                                & 0.752(0.777, 0.727) & 0.205 (0.248, 0.173) Cardiac dysrhythmias                                                                       & 0.669(0.684, 0.654) & 0.448 (0.474, 0.423) Chronic kidney disease                                                                     & 0.736(0.754, 0.718) & 0.441 (0.475, 0.412) Chronic obstructive pulmonary disease and bronchiectasis                                   & 0.725(0.743, 0.703) & 0.325 (0.357, 0.292) Complications of surgical procedures or medical care                                       & 0.713(0.732, 0.695) & 0.397 (0.430, 0.367) Conduction disorders                                                                       & 0.705(0.728, 0.681) & 0.240 (0.277, 0.211) Congestive heart failure; nonhypertensive                                                  & 0.766(0.780, 0.751) & 0.534 (0.563, 0.504) Coronary atherosclerosis and other heart disease                                           & 0.754(0.767, 0.740) & 0.583 (0.611, 0.556) Diabetes mellitus with complications                                                       & 0.892(0.905, 0.878) & 0.604 (0.644, 0.565) Diabetes mellitus without complication                                                     & 0.779(0.794, 0.764) & 0.384 (0.413, 0.357) Disorders of lipid metabolism                                                              & 0.692(0.706, 0.678) & 0.601 (0.624, 0.579) Essential hypertension                                                                     & 0.647(0.663, 0.631) & 0.552 (0.578, 0.530) Fluid and electrolyte disorders                                                            & 0.758(0.771, 0.744) & 0.642 (0.667, 0.617) Gastrointestinal hemorrhage                                                                & 0.727(0.749, 0.705) & 0.138 (0.167, 0.117) Hypertension with complications and secondary hypertension                                 & 0.740(0.756, 0.724) & 0.449 (0.482, 0.418) Other liver diseases                                                                       & 0.716(0.736, 0.693) & 0.268 (0.303, 0.238) Other lower respiratory disease                                                            & 0.636(0.661, 0.609) & 0.151 (0.173, 0.135) Other upper respiratory disease                                                            & 0.750(0.782, 0.717) & 0.288 (0.351, 0.229) Pleurisy; pneumothorax; pulmonary collapse                                                 & 0.727(0.752, 0.700) & 0.169 (0.207, 0.141) Pneumonia (except that caused by tuberculosis or sexually transmitted disease)             & 0.808(0.825, 0.790) & 0.378 (0.417, 0.339) Respiratory failure; insufficiency; arrest (adult)                                         & 0.859(0.872, 0.846) & 0.553 (0.593, 0.517) Septicemia (except in labor)                                                               & 0.858(0.870, 0.844) & 0.526 (0.566, 0.488) Shock                                                                                      & 0.896(0.908, 0.882) & 0.595 (0.637, 0.553) 
+
+
+val  26  best mean auc :0.760 mean auprc 0.419 
+
+
+                    CI AUROC (0.741, 0.778) CI AUPRC (0.387, 0.455) 
+
+
+                     AUROC accute 0.783 mixed 0.750 chronic 0.725
+
+
+                     AUROC accute CI (0.763, 0.802) mixed (0.731 , 0.767) chronic (0.708, 0.741)
+
+
+                     AUPRC accute  0.389 mixed 0.418 chronic 0.476 
+
+
+                     AUPRC accute CI  (0.353, 0.429) mixed (0.388,  0.452) chronic (0.449, 0.506) 
+
+
+                    

@@ -1,0 +1,277 @@
+Acute and unspecified renal failure                                                        & 0.627(0.664, 0.587) & 0.195 (0.237, 0.160) 
+
+
+val  1   best mean auc :0.627 mean auprc 0.195 
+
+
+                    CI AUROC (0.587, 0.664) CI AUPRC (0.160, 0.237) 
+
+
+                     AUROC accute 0.627 mixed 0.627 chronic 0.627
+
+
+                     AUROC accute CI (0.587, 0.664) mixed (0.587 , 0.664) chronic (0.587, 0.664)
+
+
+                     AUPRC accute  0.195 mixed 0.195 chronic 0.195 
+
+
+                     AUPRC accute CI  (0.160, 0.237) mixed (0.160,  0.237) chronic (0.160, 0.237) 
+
+
+                    Acute and unspecified renal failure                                                        & 0.842(0.867, 0.816) & 0.465 (0.533, 0.406) 
+
+
+val  2   best mean auc :0.842 mean auprc 0.465 
+
+
+                    CI AUROC (0.816, 0.867) CI AUPRC (0.406, 0.533) 
+
+
+                     AUROC accute 0.842 mixed 0.842 chronic 0.842
+
+
+                     AUROC accute CI (0.816, 0.867) mixed (0.816 , 0.867) chronic (0.816, 0.867)
+
+
+                     AUPRC accute  0.465 mixed 0.465 chronic 0.465 
+
+
+                     AUPRC accute CI  (0.406, 0.533) mixed (0.406,  0.533) chronic (0.406, 0.533) 
+
+
+                    Acute and unspecified renal failure                                                        & 0.857(0.877, 0.834) & 0.483 (0.551, 0.421) 
+
+
+val  3   best mean auc :0.857 mean auprc 0.483 
+
+
+                    CI AUROC (0.834, 0.877) CI AUPRC (0.421, 0.551) 
+
+
+                     AUROC accute 0.857 mixed 0.857 chronic 0.857
+
+
+                     AUROC accute CI (0.834, 0.877) mixed (0.834 , 0.877) chronic (0.834, 0.877)
+
+
+                     AUPRC accute  0.483 mixed 0.483 chronic 0.483 
+
+
+                     AUPRC accute CI  (0.421, 0.551) mixed (0.421,  0.551) chronic (0.421, 0.551) 
+
+
+                    Acute and unspecified renal failure                                                        & 0.859(0.881, 0.836) & 0.512 (0.578, 0.449) 
+
+
+val  4   best mean auc :0.859 mean auprc 0.512 
+
+
+                    CI AUROC (0.836, 0.881) CI AUPRC (0.449, 0.578) 
+
+
+                     AUROC accute 0.859 mixed 0.859 chronic 0.859
+
+
+                     AUROC accute CI (0.836, 0.881) mixed (0.836 , 0.881) chronic (0.836, 0.881)
+
+
+                     AUPRC accute  0.512 mixed 0.512 chronic 0.512 
+
+
+                     AUPRC accute CI  (0.449, 0.578) mixed (0.449,  0.578) chronic (0.449, 0.578) 
+
+
+                    
+
+
+val  5   mean auc :0.858475 mean auprc 0.508337
+
+
+ 
+
+
+val  6   mean auc :0.841767 mean auprc 0.498191
+
+
+ 
+
+
+val  7   mean auc :0.856590 mean auprc 0.513501
+
+
+ Acute and unspecified renal failure                                                        & 0.860(0.882, 0.839) & 0.496 (0.556, 0.437) 
+
+
+val  8   best mean auc :0.860 mean auprc 0.496 
+
+
+                    CI AUROC (0.839, 0.882) CI AUPRC (0.437, 0.556) 
+
+
+                     AUROC accute 0.860 mixed 0.860 chronic 0.860
+
+
+                     AUROC accute CI (0.839, 0.882) mixed (0.839 , 0.882) chronic (0.839, 0.882)
+
+
+                     AUPRC accute  0.496 mixed 0.496 chronic 0.496 
+
+
+                     AUPRC accute CI  (0.437, 0.556) mixed (0.437,  0.556) chronic (0.437, 0.556) 
+
+
+                    Acute and unspecified renal failure                                                        & 0.861(0.884, 0.837) & 0.522 (0.591, 0.457) 
+
+
+val  9   best mean auc :0.861 mean auprc 0.522 
+
+
+                    CI AUROC (0.837, 0.884) CI AUPRC (0.457, 0.591) 
+
+
+                     AUROC accute 0.861 mixed 0.861 chronic 0.861
+
+
+                     AUROC accute CI (0.837, 0.884) mixed (0.837 , 0.884) chronic (0.837, 0.884)
+
+
+                     AUPRC accute  0.522 mixed 0.522 chronic 0.522 
+
+
+                     AUPRC accute CI  (0.457, 0.591) mixed (0.457,  0.591) chronic (0.457, 0.591) 
+
+
+                    Acute and unspecified renal failure                                                        & 0.868(0.890, 0.847) & 0.523 (0.587, 0.458) 
+
+
+val  10  best mean auc :0.868 mean auprc 0.523 
+
+
+                    CI AUROC (0.847, 0.890) CI AUPRC (0.458, 0.587) 
+
+
+                     AUROC accute 0.868 mixed 0.868 chronic 0.868
+
+
+                     AUROC accute CI (0.847, 0.890) mixed (0.847 , 0.890) chronic (0.847, 0.890)
+
+
+                     AUPRC accute  0.523 mixed 0.523 chronic 0.523 
+
+
+                     AUPRC accute CI  (0.458, 0.587) mixed (0.458,  0.587) chronic (0.458, 0.587) 
+
+
+                    
+
+
+val  11  mean auc :0.858608 mean auprc 0.507229
+
+
+ 
+
+
+val  12  mean auc :0.868394 mean auprc 0.518285
+
+
+ 
+
+
+val  13  mean auc :0.861872 mean auprc 0.511995
+
+
+ 
+
+
+val  14  mean auc :0.857877 mean auprc 0.505561
+
+
+ 
+
+
+val  15  mean auc :0.856657 mean auprc 0.491115
+
+
+ 
+
+
+val  16  mean auc :0.860926 mean auprc 0.514649
+
+
+ 
+
+
+val  17  mean auc :0.860263 mean auprc 0.502351
+
+
+ 
+
+
+val  18  mean auc :0.846999 mean auprc 0.502632
+
+
+ 
+
+
+val  19  mean auc :0.854976 mean auprc 0.494907
+
+
+ 
+
+
+val  20  mean auc :0.854765 mean auprc 0.504186
+
+
+ 
+
+
+val  21  mean auc :0.858732 mean auprc 0.515028
+
+
+ 
+
+
+val  22  mean auc :0.842072 mean auprc 0.477301
+
+
+ 
+
+
+val  23  mean auc :0.829219 mean auprc 0.446624
+
+
+ 
+
+
+val  24  mean auc :0.810324 mean auprc 0.427152
+
+
+ 
+
+
+val  25  mean auc :0.801697 mean auprc 0.410968
+
+
+ Acute and unspecified renal failure                                                        & 0.868(0.890, 0.847) & 0.523 (0.587, 0.458) 
+
+
+val  25  best mean auc :0.868 mean auprc 0.523 
+
+
+                    CI AUROC (0.847, 0.890) CI AUPRC (0.458, 0.587) 
+
+
+                     AUROC accute 0.868 mixed 0.868 chronic 0.868
+
+
+                     AUROC accute CI (0.847, 0.890) mixed (0.847 , 0.890) chronic (0.847, 0.890)
+
+
+                     AUPRC accute  0.523 mixed 0.523 chronic 0.523 
+
+
+                     AUPRC accute CI  (0.458, 0.587) mixed (0.458,  0.587) chronic (0.458, 0.587) 
+
+
+                    

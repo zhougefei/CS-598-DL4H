@@ -1,0 +1,22 @@
+Acute and unspecified renal failure                                                        & 0.806(0.837, 0.773) & 0.432 (0.506, 0.362) 
+
+
+joint test  0   best mean auc :0.806 mean auprc 0.432 
+
+
+                    CI AUROC (0.773, 0.837) CI AUPRC (0.362, 0.506) 
+
+
+                     AUROC accute 0.806 mixed 0.806 chronic 0.806
+
+
+                     AUROC accute CI (0.773, 0.837) mixed (0.773 , 0.837) chronic (0.773, 0.837)
+
+
+                     AUPRC accute  0.432 mixed 0.432 chronic 0.432 
+
+
+                     AUPRC accute CI  (0.362, 0.506) mixed (0.362,  0.506) chronic (0.362, 0.506) 
+
+
+                    
